@@ -34,11 +34,6 @@ import substates.GameOverSubstate;
 #if !flash
 import flixel.addons.display.FlxRuntimeShader;
 #end
-#if CUSTOM_SHADERS_ALLOWED
-import shaders.openfl.filters.ShaderFilter as CustomShaderFilter;
-import openfl.filters.BitmapFilter;
-import shaders.CustomShaders;
-#end
 
 import objects.Note.EventNote;
 import objects.*;
@@ -53,11 +48,6 @@ import psychlua.HScript;
 
 #if SScript
 import tea.SScript;
-#end
-
-#if VIDEOS_ALLOWED
-import objects.Video;
-import objects.VideoSprite;
 #end
 
 /**
@@ -114,13 +104,6 @@ class PlayState extends MusicBeatState
 	public var modchartSounds:Map<String, FlxSound> = new Map<String, FlxSound>();
 	public var modchartTexts:Map<String, FlxText> = new Map<String, FlxText>();
 	public var modchartSaves:Map<String, FlxSave> = new Map<String, FlxSave>();
-	#if CUSTOM_SHADERS_ALLOWED
-	public var modchartShader:Map<String, Effect> = new Map<String, Effect>();
-	public var shaderUpdates:Array<Float->Void> = [];
-	#end
-	#if VIDEOS_ALLOWED
-	public var modchartVideoSprites:Map<String, VideoSprite> = new Map<String, VideoSprite>();
-	#end
 	#end
 
 	public var BF_X:Float = 770;
@@ -274,10 +257,6 @@ class PlayState extends MusicBeatState
 	public var startCallback:Void->Void = null;
 	public var endCallback:Void->Void = null;
 
-	#if VIDEOS_ALLOWED
-	public var video:Video;
-	#end
-
 	public var luaVirtualPad:FlxVirtualPad;
 
 	override public function create()
@@ -395,14 +374,6 @@ class PlayState extends MusicBeatState
 		switch (curStage)
 		{
 			case 'stage': new states.stages.StageWeek1(); //Week 1
-			case 'spooky': new states.stages.Spooky(); //Week 2
-			case 'philly': new states.stages.Philly(); //Week 3
-			case 'limo': new states.stages.Limo(); //Week 4
-			case 'mall': new states.stages.Mall(); //Week 5 - Cocoa, Eggnog
-			case 'mallEvil': new states.stages.MallEvil(); //Week 5 - Winter Horrorland
-			case 'school': new states.stages.School(); //Week 6 - Senpai, Roses
-			case 'schoolEvil': new states.stages.SchoolEvil(); //Week 6 - Thorns
-			case 'tank': new states.stages.Tank(); //Week 7 - Ugh, Guns, Stress
 		}
 
 		if(isPixelStage) {
@@ -833,11 +804,10 @@ class PlayState extends MusicBeatState
 		#end
 	}
 
-	public function getLuaObject(tag:String, text:Bool=true, videos:Bool=true):Dynamic {
+	public function getLuaObject(tag:String, text:Bool=true):Dynamic {
 		#if LUA_ALLOWED
 		if(modchartSprites.exists(tag)) return modchartSprites.get(tag);
 		if(text && modchartTexts.exists(tag)) return modchartTexts.get(tag);
-		#if VIDEOS_ALLOWED if(videos && modchartVideoSprites.exists(tag)) return modchartVideoSprites.get(tag); #end
 		if(variables.exists(tag)) return variables.get(tag);
 		#end
 		return null;
@@ -853,31 +823,61 @@ class PlayState extends MusicBeatState
 		char.y += char.positionArray[1];
 	}
 
-	public function startVideo(name:String): #if VIDEOS_ALLOWED Video #else Void #end
+	public var videoCutscene:VideoSprite = null;
+	public function startVideo(name:String, forMidSong:Bool = false, canSkip:Bool = true, loop:Bool = false, playOnLoad:Bool = true)
 	{
 		#if VIDEOS_ALLOWED
-		var filepath:String = Paths.video(name);
-		video = new Video();
 		inCutscene = true;
+		canPause = false;
 
-		if(#if MODS_ALLOWED !FileSystem.exists(filepath) #else !Assets.exists(filepath) #end) {
-			FlxG.log.warn('Couldnt find video file: ' + name);
-			startAndEnd();
-			return null;
-		}
+		var foundFile:Bool = false;
+		var fileName:String = Paths.video(name);
 
-		video.startVideo(filepath);
-		video.onVideoEnd.add(function(){
-			startAndEnd();
-			return;
-		});
-
-		return video;
+		#if sys
+		if (FileSystem.exists(fileName))
 		#else
-		FlxG.log.warn('Platform not supported for video play back!');
-		startAndEnd();
-		return;
+		if (OpenFlAssets.exists(fileName))
 		#end
+		foundFile = true;
+
+		if (foundFile)
+		{
+			videoCutscene = new VideoSprite(fileName, forMidSong, canSkip, loop);
+
+			// Finish callback
+			if (!forMidSong)
+			{
+				function onVideoEnd()
+				{
+					if (generatedMusic && PlayState.SONG.notes[Std.int(curStep / 16)] != null && !endingSong && !isCameraOnForcedPos)
+					{
+						moveCameraSection();
+						FlxG.camera.snapToTarget();
+					}
+					videoCutscene = null;
+					canPause = false;
+					inCutscene = false;
+					startAndEnd();
+				}
+				videoCutscene.finishCallback = onVideoEnd;
+				videoCutscene.onSkip = onVideoEnd;
+			}
+			add(videoCutscene);
+
+			if (playOnLoad)
+				videoCutscene.videoSprite.play();
+			return videoCutscene;
+		}
+		#if (LUA_ALLOWED || HSCRIPT_ALLOWED)
+		else addTextToDebug("Video not found: " + fileName, FlxColor.RED);
+		#else
+		else FlxG.log.error("Video not found: " + fileName);
+		#end
+		#else
+		FlxG.log.warn('Platform not supported!');
+		startAndEnd();
+		#end
+		return null;
 	}
 
 	public function startAndEnd()
@@ -1492,98 +1492,6 @@ class PlayState extends MusicBeatState
 		callOnScripts('onEventPushed', [subEvent.event, subEvent.value1 != null ? subEvent.value1 : '', subEvent.value2 != null ? subEvent.value2 : '', subEvent.strumTime]);
 	}
 
-	#if CUSTOM_SHADERS_ALLOWED
-	public function addShaderToObject(obj:String, effect:CustomShaderFilter) {
-		if(obj == '') {
-			@:privateAccess
-			var curCamFilters:Array<BitmapFilter> = FlxG.game._filters;
-			if(curCamFilters == null || curCamFilters.length == 0){
-				FlxG.game.setFilters([effect]);
-				return;
-			}
-			curCamFilters.push(effect);
-			FlxG.game.setFilters(curCamFilters);
-			FlxG.game.filtersEnabled = ClientPrefs.data.shaders;
-		} else {
-			var camera:FlxCamera = LuaUtils.cameraFromString(obj);
-			if(camera == null || (!obj.toLowerCase().contains('game') && camera == camGame)) {
-				if(Reflect.fields(this).contains(obj) && Std.isOfType(Reflect.field(this, obj), FlxSprite)){
-					var gameObject = Reflect.field(this, obj);
-					gameObject.shader = effect.shader;
-					return;
-				}
-				var luaObject:FlxSprite = getLuaObject(obj);
-				if(luaObject == null){
-					addTextToDebug('add shader function: NO OBJECT WITH A TAG OF \"$obj\" EXIST', FlxColor.RED);
-					return;
-				}
-				luaObject.shader = effect.shader;
-				return;
-			}
-			var curCamFilters:Array<BitmapFilter> = camera.filters;
-			if(curCamFilters == null || curCamFilters.length == 0){
-				camera.filters = [effect];
-				return;
-			}
-			curCamFilters.push(effect);
-			camera.filters = curCamFilters;
-			camera.filtersEnabled = ClientPrefs.data.shaders;
-		}
-	}
-
-	public function removeShaderFromCamera(cam:String, effect:Dynamic) {
-		var camera:Dynamic;
-		if(cam == '')
-			camera = FlxG.game;
-		else
-			camera = LuaUtils.cameraFromString(cam);
-		if(camera == null) {
-			addTextToDebug('shader remove function: ERROR THE CAMERA $cam DOES NOT EXIST', FlxColor.RED);
-			return;
-		}
-
-		if(camera._filters.contains(effect))
-			camera._filters.remove(effect);
-	}
-
-	public function clearObjectShaders(obj:String) {
-		if(obj == '') {
-			var shadersToRemove = [];
-			@:privateAccess{
-				if(FlxG.game._filters.length > 0) {
-					for(shader in FlxG.game._filters)
-						shadersToRemove.push(shader);
-					for(shader in shadersToRemove)
-						FlxG.game._filters.remove(shader);
-				}
-			}
-		} else {
-			var camera:FlxCamera = LuaUtils.cameraFromString(obj);
-			if(camera == null || (!obj.toLowerCase().contains('game') && camera == camGame)) {
-				if(Reflect.fields(this).contains(obj) && Std.isOfType(Reflect.field(this, obj), FlxSprite)){
-					var gameObject = Reflect.field(this, obj);
-					gameObject.shader = null;
-					return;
-				}
-				var luaObject:FlxSprite = getLuaObject(obj);
-				if(luaObject == null){
-					addTextToDebug('shaders clear function: NO OBJECT WITH A TAG OF \"$obj\" EXIST', FlxColor.RED);
-					return;
-				}
-				luaObject.shader = null;
-				return;
-			}
-			var shadersToRemove = [];
-			if(camera.filters.length > 0){
-				for(shader in camera.filters)
-					shadersToRemove.push(shader);
-				for(shader in shadersToRemove)
-					camera.filters.remove(shader);
-			}
-		}
-	}
-    #end
-
 	public var skipArrowStartTween:Bool = false; //for lua
 	private function generateStaticArrows(player:Int):Void
 	{
@@ -1642,12 +1550,6 @@ class PlayState extends MusicBeatState
 			}
 			FlxTimer.globalManager.forEach(function(tmr:FlxTimer) if(!tmr.finished) tmr.active = false);
 			FlxTween.globalManager.forEach(function(twn:FlxTween) if(!twn.finished) twn.active = false);
-
-			#if VIDEOS_ALLOWED
-			for(video in modchartVideoSprites)
-				if(video != null && members.contains(video))
-					video.paused = true;
-			#end
 		}
 
 		super.openSubState(SubState);
@@ -1663,12 +1565,6 @@ class PlayState extends MusicBeatState
 	
 			FlxTimer.globalManager.forEach(function(tmr:FlxTimer) if(!tmr.finished) tmr.active = true);
 			FlxTween.globalManager.forEach(function(twn:FlxTween) if(!twn.finished) twn.active = true);
-
-			#if VIDEOS_ALLOWED
-			for(video in modchartVideoSprites)
-				if(video != null && members.contains(video))
-					video.paused = false;
-			#end
 
 			paused = false;
 			callOnScripts('onResume');
@@ -1939,10 +1835,6 @@ class PlayState extends MusicBeatState
 		setOnScripts('cameraX', camFollow.x);
 		setOnScripts('cameraY', camFollow.y);
 		setOnScripts('botPlay', cpuControlled);
-		#if CUSTOM_SHADERS_ALLOWED
-        for (shaderUpdate in shaderUpdates)
-			shaderUpdate(elapsed);
-        #end
 		callOnScripts('onUpdatePost', [elapsed]);
     }
 

@@ -330,7 +330,10 @@ class CharacterEditorState extends MusicBeatState
 					}
 
 					if(animateGhost == null || animateGhostImage != character.imageFile)
-						Paths.loadAnimateAtlas(animateGhost, character.imageFile);
+					{
+						animateGhost.loadAtlas(Paths.getAtlasPath(character.imageFile, 'images'));
+						// Paths.loadAnimateAtlas(animateGhost, character.imageFile);
+					}
 					
 					if(myAnim.indices != null && myAnim.indices.length > 0)
 						animateGhost.anim.addBySymbolIndices('anim', myAnim.name, myAnim.indices, 0, false);
@@ -814,7 +817,8 @@ class CharacterEditorState extends MusicBeatState
 			character.atlas.showPivot = false;
 			try
 			{
-				Paths.loadAnimateAtlas(character.atlas, character.imageFile);
+				character.atlas.loadAtlas(Paths.getAtlasPath(character.imageFile, 'images'));
+				// Paths.loadAnimateAtlas(character.atlas, character.imageFile);
 			}
 			catch(e:Dynamic)
 			{

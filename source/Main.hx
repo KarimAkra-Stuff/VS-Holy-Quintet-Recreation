@@ -70,6 +70,10 @@ class Main extends Sprite
 
 		if (stage != null) init();
 		else addEventListener(Event.ADDED_TO_STAGE, init);
+
+		#if VIDEOS_ALLOWED
+		hxvlc.util.Handle.init(#if (hxvlc >= "1.8.0")  ['--no-lua'] #end);
+		#end
 	}
 
 	private function init(?E:Event):Void

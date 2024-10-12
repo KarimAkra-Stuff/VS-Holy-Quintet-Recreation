@@ -4,9 +4,6 @@ package psychlua;
 import openfl.filters.ShaderFilter;
 import flixel.addons.display.FlxRuntimeShader;
 #end
-#if CUSTOM_SHADERS_ALLOWED
-import shaders.CustomShaders;
-#end
 
 class ShaderFunctions
 {
@@ -327,130 +324,6 @@ class ShaderFunctions
 			return false;
 			#end
 		});
-
-        // SHADER SHIT
-        #if CUSTOM_SHADERS_ALLOWED
-        funk.set("addChromaticEffect", function(tag:String, object:String, globalChromeOffset:Float = 0.005, ?redOffset:Float = 0.0, ?greenOffset:Float = 0.0, ?blueOffset:Float = 0.0) {
-			var shader = new ChromaticAberrationEffect(globalChromeOffset, redOffset, greenOffset, blueOffset);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-	    });
-
-        funk.set("addScanlineEffect", function(tag:String, object:String,lockAlpha:Bool=false) {
-			var shader = new ScanlineEffect(lockAlpha);
-			resetShader(shader, tag);
-        	PlayState.instance.addShaderToObject(object, shader.shader);
-
-        });
-        funk.set("addGrainEffect", function(tag:String, object:String,grainSize:Float,lumAmount:Float,lockAlpha:Bool=false) {
-			var shader = new GrainEffect(grainSize,lumAmount,lockAlpha);
-			resetShader(shader, tag);
-	    	PlayState.instance.addShaderToObject(object, shader.shader);
-
-        });
-        funk.set("addTiltshiftEffect", function(tag:String, object:String,blurAmount:Float,center:Float) {
-			var shader = new TiltshiftEffect(blurAmount,center);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-        funk.set("addVCREffect", function(tag:String, object:String,glitchFactor:Float = 0.0,distortion:Bool=true,perspectiveOn:Bool=true,vignetteMoving:Bool=true) {
-			var shader = new VCRDistortionEffect(glitchFactor,distortion,perspectiveOn,vignetteMoving);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-        funk.set("addGlitchEffect", function(tag:String, object:String,waveSpeed:Float = 0.1,waveFrq:Float = 0.1,waveAmp:Float = 0.1) {
-			var shader = new GlitchEffect(waveSpeed,waveFrq,waveAmp);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addPulseEffect", function(tag:String, object:String,waveSpeed:Float = 0.1,waveFrq:Float = 0.1,waveAmp:Float = 0.1) {
-			var shader = new PulseEffect(waveSpeed,waveFrq,waveAmp);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addDistortionEffect", function(tag:String, object:String,waveSpeed:Float = 0.1,waveFrq:Float = 0.1,waveAmp:Float = 0.1) {
-			var shader = new DistortBGEffect(waveSpeed,waveFrq,waveAmp);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addInvertEffect", function(tag:String, object:String,lockAlpha:Bool=false) {
-			var shader = new InvertColorsEffect();
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addGrayscaleEffect", function(tag:String, object:String) {
-			var shader = new GreyscaleEffect();
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("add3DEffect", function(tag:String, object:String,xrotation:Float=0,yrotation:Float=0,zrotation:Float=0,depth:Float=0) {
-			var shader = new ThreeDEffect(xrotation,yrotation,zrotation,depth);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addBloomEffect", function(tag:String, object:String,intensity:Float = 0.35,blurSize:Float=1.0) {
-			var shader = new BloomEffect(blurSize/512.0,intensity);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addBrightEffect", function(tag:String, object:String, brightness:Float, ?contrast:Float=1.0) {
-			var shader = new BrightEffect(brightness, contrast);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addBulgeEffect", function(tag:String, object:String, value:Float = 0.0) {
-			var shader = new BulgeEffect(value);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-		funk.set("addRadialBlurEffect", function(tag:String, object:String, strength:Float = 0, x:Float = 0, y:Float = 0, zoom:Float = 1.0) {
-			var shader = new RadialBlurEffect(strength, x, y, zoom);
-			resetShader(shader, tag);
-            PlayState.instance.addShaderToObject(object, shader.shader);
-        });
-
-
-		funk.set("removeEffect", function(camera:String, effect:String) {
-			if(PlayState.instance.modchartShader.exists(effect))
-	            PlayState.instance.removeShaderFromCamera(camera, PlayState.instance.modchartShader.get(effect));
-        });
-
-		funk.set("clearEffects", function(object:String) {
-            PlayState.instance.clearObjectShaders(object);
-        });
-
-		funk.set("tweenEffectFloat", function(effect:String, floatToTween:String, duration:Float, from:Float, to:Float) {
-			var shader:Effect = PlayState.instance.modchartShader.get(effect);
-			if(shader == null){
-				FunkinLua.luaTrace("tweenEffectInt: the effect " + effect + " is not added to the game", false, false, FlxColor.RED);
-				return;
-			}
-			FlxTween.num(from, to, duration, function(newValue) {
-				shader.setFloat(floatToTween, newValue);
-			});
-		});
-
-		funk.set("tweenEffectInt", function(effect:String, intToTween:String, duration:Float, from:Int, to:Int) {
-			var shader:Effect = PlayState.instance.modchartShader.get(effect);
-			if(shader == null){
-				FunkinLua.luaTrace("tweenEffectInt: the effect " + effect + " is not added to the game", false, false, FlxColor.RED);
-				return;
-			}
-			FlxTween.num(from, to, duration, function(newValue) {
-				shader.setInt(intToTween, Std.int(newValue));
-			});
-		});
-        #end
 	}
 	
 	#if (!flash && MODS_ALLOWED && sys)
@@ -478,17 +351,4 @@ class ShaderFunctions
 		    return FlxG.game;
 	    return LuaUtils.cameraFromString(obj);
     }
-
-	#if CUSTOM_SHADERS_ALLOWED
-	public static function resetShader(shader:Effect, tag:String){
-		if(PlayState.instance.modchartShader.exists(tag)){
-			PlayState.instance.removeShaderFromCamera('', PlayState.instance.modchartShader.get(tag));
-			PlayState.instance.removeShaderFromCamera('game', PlayState.instance.modchartShader.get(tag));
-			PlayState.instance.removeShaderFromCamera('hud', PlayState.instance.modchartShader.get(tag));
-			PlayState.instance.removeShaderFromCamera('other', PlayState.instance.modchartShader.get(tag));
-			PlayState.instance.modchartShader.remove(tag);
-		}
-		PlayState.instance.modchartShader.set(tag, shader);
-	}
-	#end
 }

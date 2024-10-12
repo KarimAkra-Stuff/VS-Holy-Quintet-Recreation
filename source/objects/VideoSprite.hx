@@ -1,127 +1,173 @@
 package objects;
 
-#if VIDEOS_ALLOWED
-#if (hxCodec >= "3.0.0")
-import hxcodec.flixel.FlxVideoSprite as MainVideoSprite;
-#elseif (hxCodec >= "2.6.1")
-import hxcodec.VideoSprite as MainVideoSprite;
-#elseif (hxCodec == "2.6.0")
-import VideoSprite as MainVideoSprite;
-#else
-import vlc.MP4Sprite as VideoMainVideoSpriteprite;
+import flixel.addons.display.FlxPieDial;
+
+#if hxvlc
+import hxvlc.flixel.FlxVideoSprite;
 #end
-#end
-import states.PlayState;
-import haxe.extern.EitherType;
-import flixel.util.FlxSignal;
-import haxe.io.Path;
 
-#if VIDEOS_ALLOWED
-class VideoSprite extends MainVideoSprite
-{
-	public var playbackRate(get, set):EitherType<Single, Float>;
-	public var paused(default, set):Bool = false;
-	public var onVideoEnd:FlxSignal;
-	public var onVideoStart:FlxSignal;
+class VideoSprite extends FlxSpriteGroup {
+	#if VIDEOS_ALLOWED
+	public var finishCallback:Void->Void = null;
+	public var onSkip:Void->Void = null;
 
-	public function new(x:Float = 0, y:Float = 0)
-	{
-		super(x, y);
+	final _timeToSkip:Float = 1;
+	public var holdingTime:Float = 0;
+	public var videoSprite:FlxVideoSprite;
+	public var skipSprite:FlxPieDial;
+	public var cover:FlxSprite;
+	public var canSkip(default, set):Bool = false;
 
-		onVideoEnd = new FlxSignal();
-		onVideoEnd.add(destroy);
-		onVideoStart = new FlxSignal();
-		#if (hxCodec >= "3.0.0")
-		onVideoEnd.add(destroy);
-		bitmap.onOpening.add(onVideoStart.dispatch);
-		bitmap.onEndReached.add(onVideoEnd.dispatch);
-		#else
-		openingCallback = onVideoStart.dispatch;
-		finishCallback = onVideoEnd.dispatch;
-		#end
-	}
+	private var videoName:String;
 
-	public function startVideo(path:String, loop:Bool = false):VideoSprite
-	{
-		#if (hxCodec >= "3.0.0")
-		play(path, loop);
-		#else
-		playVideo(path, loop, false);
-		#end
-		return this;
-	}
+	public var waiting:Bool = false;
+	public var didPlay:Bool = false;
 
-	@:noCompletion
-	private function set_paused(shouldPause:Bool)
-	{
-		#if (hxCodec >= "3.0.0")
-		var parentResume = resume;
-		var parentPause = pause;
-		#else
-		var parentResume = bitmap.resume;
-		var parentPause = bitmap.pause;
-		#end
+	public function new(videoName:String, isWaiting:Bool, canSkip:Bool = false, shouldLoop:Dynamic = false) {
+		super();
 
-		if (shouldPause)
+		this.videoName = videoName;
+		scrollFactor.set();
+		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+		waiting = isWaiting;
+		if(!waiting)
 		{
-			#if (hxCodec >= "3.0.0")
-			pause();
-			#else
-			bitmap.pause();
-			#end
-
-			if (FlxG.autoPause)
-			{
-				if (FlxG.signals.focusGained.has(parentResume))
-					FlxG.signals.focusGained.remove(parentResume);
-
-				if (FlxG.signals.focusLost.has(parentPause))
-					FlxG.signals.focusLost.remove(parentPause);
-			}
+			cover = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
+			cover.scale.set(FlxG.width + 100, FlxG.height + 100);
+			cover.screenCenter();
+			cover.scrollFactor.set();
+			add(cover);
 		}
-		else
+
+		// initialize sprites
+		videoSprite = new FlxVideoSprite();
+		videoSprite.antialiasing = ClientPrefs.data.antialiasing;
+		add(videoSprite);
+		if(canSkip) this.canSkip = true;
+
+		// callbacks
+		if(!shouldLoop)
 		{
-			#if (hxCodec >= "3.0.0")
-			resume();
-			#else
-			bitmap.resume();
-			#end
-
-			if (FlxG.autoPause)
-			{
-				FlxG.signals.focusGained.add(parentResume);
-				FlxG.signals.focusLost.add(parentPause);
-			}
+			videoSprite.bitmap.onEndReached.add(function() {
+				if(alreadyDestroyed) return;
+	
+				trace('Video destroyed');
+				if(cover != null)
+				{
+					remove(cover);
+					cover.destroy();
+				}
+		
+				PlayState.instance.remove(this);
+				destroy();
+				alreadyDestroyed = true;
+			});
 		}
-		return shouldPause;
+
+		videoSprite.bitmap.onFormatSetup.add(function()
+		{
+			/*
+			#if hxvlc
+			var wd:Int = videoSprite.bitmap.formatWidth;
+			var hg:Int = videoSprite.bitmap.formatHeight;
+			trace('Video Resolution: ${wd}x${hg}');
+			videoSprite.scale.set(FlxG.width / wd, FlxG.height / hg);
+			#end
+			*/
+			videoSprite.setGraphicSize(FlxG.width);
+			videoSprite.updateHitbox();
+			videoSprite.screenCenter();
+		});
+
+		// start video and adjust resolution to screen size
+		videoSprite.load(videoName, shouldLoop ? ['input-repeat=65545'] : null);
 	}
 
-	@:noCompletion
-	private function set_playbackRate(multi:EitherType<Single, Float>)
-	{
-		bitmap.rate = multi;
-		return multi;
-	}
-
-	@:noCompletion
-	private function get_playbackRate():Float
-	{
-		return bitmap.rate;
-	}
-
+	var alreadyDestroyed:Bool = false;
 	override function destroy()
 	{
+		if(alreadyDestroyed)
+		{
+			super.destroy();
+			return;
+		}
+
+		trace('Video destroyed');
+		if(cover != null)
+		{
+			remove(cover);
+			cover.destroy();
+		}
+
+		if(finishCallback != null)
+			finishCallback();
+		onSkip = null;
+
+		PlayState.instance.remove(this);
 		super.destroy();
-		#if (hxCodec < "3.0.0")
-		try
-		{
-			bitmap.onEndReached();
-		}
-		catch (e:Dynamic)
-		{
-			trace(e);
-		}
-		#end
 	}
-#end
+
+	override function update(elapsed:Float)
+	{
+		if(canSkip)
+		{
+			if(Controls.instance.pressed('accept'))
+			{
+				holdingTime = Math.max(0, Math.min(_timeToSkip, holdingTime + elapsed));
+			}
+			else if (holdingTime > 0)
+			{
+				holdingTime = Math.max(0, FlxMath.lerp(holdingTime, -0.1, FlxMath.bound(elapsed * 3, 0, 1)));
+			}
+			updateSkipAlpha();
+
+			if(holdingTime >= _timeToSkip)
+			{
+				if(onSkip != null) onSkip();
+				finishCallback = null;
+				videoSprite.bitmap.onEndReached.dispatch();
+				PlayState.instance.remove(this);
+				trace('Skipped video');
+				return;
+			}
+		}
+		super.update(elapsed);
+	}
+
+	function set_canSkip(newValue:Bool)
+	{
+		canSkip = newValue;
+		if(canSkip)
+		{
+			if(skipSprite == null)
+			{
+				skipSprite = new FlxPieDial(0, 0, 40, FlxColor.WHITE, 40, true, 24);
+				skipSprite.replaceColor(FlxColor.BLACK, FlxColor.TRANSPARENT);
+				skipSprite.x = FlxG.width - (skipSprite.width + 80);
+				skipSprite.y = FlxG.height - (skipSprite.height + 72);
+				skipSprite.amount = 0;
+				add(skipSprite);
+			}
+		}
+		else if(skipSprite != null)
+		{
+			remove(skipSprite);
+			skipSprite.destroy();
+			skipSprite = null;
+		}
+		return canSkip;
+	}
+
+	function updateSkipAlpha()
+	{
+		if(skipSprite == null) return;
+
+		skipSprite.amount = Math.min(1, Math.max(0, (holdingTime / _timeToSkip) * 1.025));
+		skipSprite.alpha = FlxMath.remapToRange(skipSprite.amount, 0.025, 1, 0, 1);
+	}
+
+	public function resume() videoSprite?.resume();
+	public function pause() videoSprite?.pause();
+	#end
 }

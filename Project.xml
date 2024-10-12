@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin': Psych Engine" file="PsychEngine" packageName="com.shadowmario.psychengine" package="com.shadowmario.psychengine" main="Main" version="0.2.8" company="ShadowMario" />
+	<app title="A Magical Friday ★ Night': VS Holy Quintet" file="HolyQuintet" packageName="com.mobileporting.holyquintet" package="com.mobileporting.holyquintet" main="Main" version="0.2.8" company="MobilePorting" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -21,14 +21,14 @@
 	<!-- ______________________ PSYCH ENGINE CUSTOMIZATION ______________________ -->
 
 	<!-- <define name="MODS_ALLOWED" if="desktop || mobile || emscripten" /> -->
-	<define name="HSCRIPT_ALLOWED" if="desktop || mobile || web" />
-	<define name="LUA_ALLOWED" if="desktop || mobile" unless="hl"/>
-	<define name="ACHIEVEMENTS_ALLOWED" />
-	<define name="DISCORD_ALLOWED" if="desktop" unless="hl"/>
-	<define name="LOADING_SCREEN_ALLOWED" />
-	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE THE PSYCH LOGO FROM LOADING SCREEN -->
-	<define name="VIDEOS_ALLOWED" if="desktop || mobile" unless="32bits || hl || NOVIDEO || rpi"/> <!-- i'll keep this cuz it makes vscode think i don't use videos -->
-        <define name="CUSTOM_SHADERS_ALLOWED" if="LUA_ALLOWED"/>
+	<!-- <define name="HSCRIPT_ALLOWED" if="desktop || mobile || web" /> -->
+	<!-- <define name="LUA_ALLOWED" if="desktop || mobile" unless="hl"/> -->
+	<!-- <define name="ACHIEVEMENTS_ALLOWED" /> -->
+	<!-- <define name="DISCORD_ALLOWED" if="desktop" unless="hl"/> -->
+	<!-- <define name="LOADING_SCREEN_ALLOWED" /> -->
+	<!-- DELETE THIS TO REMOVE THE PSYCH LOGO FROM LOADING SCREEN -->
+	<!-- <define name="PSYCH_WATERMARKS"/> -->
+	<define name="VIDEOS_ALLOWED" if="desktop || mobile" unless="32bits || hl || NOVIDEO || rpi"/>
 
 	<section if="officialBuild">
 		<define name="TITLE_SCREEN_EASTER_EGG"/>
@@ -37,7 +37,7 @@
 	<!-- ____________________________ Window Settings ___________________________ -->
 
 	<!--These window settings apply to all targets-->
-	<window width="1280" height="720" fps="" background="#000000" hardware="true" vsync="false" />
+	<window width="1280" height="720" background="#000000" hardware="true" vsync="false" />
 
 	<!--HTML5-specific-->
 	<window if="html5" resizable="true" />
@@ -56,7 +56,7 @@
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bits" />
-        <set name="BUILD_DIR" value="export/rpi" if="rpi" />
+    <set name="BUILD_DIR" value="export/rpi" if="rpi" />
 
 	<classpath name="source" />
 
@@ -107,7 +107,8 @@
 	<!--Psych stuff needed-->
 	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
 	<haxelib name="SScript" if="HSCRIPT_ALLOWED"/>
-	<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/>
+	<!-- <haxelib name="hxCodec" if="VIDEOS_ALLOWED"/> -->
+	<haxelib name="hxvlc" if="VIDEOS_ALLOWED"/>
 	<haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED"/>
 	<haxelib name="flxanimate" unless="html5"/>
 	<haxelib name="tjson"/>
@@ -162,29 +163,34 @@
 
 	<haxedef name='no-inline' if="html5"/>
 
-		<!--Always enable Null Object Reference check-->
+	<!--Always enable Null Object Reference check-->
+	<section if="cpp">
 		<haxedef name="HXCPP_CHECK_POINTER" />
 		<haxedef name="HXCPP_STACK_LINE" />
 		<haxedef name="HXCPP_STACK_TRACE" />
+		<haxedef name="HXCPP_CATCH_SEGV" />
+	</section>
+
+	<!-- Haxe 4.3.0+: Enable pretty syntax errors and stuff. -->
+	<!-- pretty (haxeflixel default), indent, classic (haxe compiler default) -->
+	<haxedef name="message.reporting" value="pretty" />
 	
-		<section if="android">
+	<section if="android">
 			<!-- Do whatever you want I'm tired uninstall and install everytime -->
 			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
+	</section>
 
-			<!--Target SDK-->
-			<android target-sdk-version="29" if="EXTERNAL || MEDIA"/>
-
-            <config:android permission="android.permission.MANAGE_EXTERNAL_STORAGE" if="EXTERNAL || MEDIA"/>
-		</section>
-
-		<section if="ios">
-			<define name='objc' />
-			<ios linker-flags='-ObjC' />
-		</section>
+	<section if="ios">
+		<define name='objc' />
+		<ios linker-flags='-ObjC' />
+	</section>
 
 	<!--Avoid memory leaks with for loops in HScript-->
 	<haxedef name="loop_unroll_max_cost" value="25" />
 	<haxedef name="DISABLED_MACRO_SUPERLATIVE" />
+
+	<haxedef name="HXC_LIBVLC_LOGGING" if="VIDEOS_ALLOWED debug" />
+	<haxedef name="HXVLC_NO_SHARE_DIRECTORY" if="VIDEOS_ALLOWED" />
 
 	<!--Macro fixes-->
 	<haxeflag name="--macro" value="allowPackage('flash')" />

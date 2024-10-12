@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="virtualpad.png">
+<SubTexture name="left" x="0" y="0" width="264" height="125" />
+<SubTexture name="down" x="264" y="0" width="264" height="125" />
+<SubTexture name="up" x="528" y="0" width="264" height="125" />
+<SubTexture name="right" x="792" y="0" width="264" height="125" />
+<SubTexture name="a" x="0" y="125" width="264" height="125" />
+<SubTexture name="b" x="264" y="125" width="264" height="125" />
+<SubTexture name="c" x="528" y="125" width="264" height="125" />
+<SubTexture name="d" x="792" y="125" width="264" height="125" />
+<SubTexture name="e" x="0" y="250" width="264" height="125" />
+<SubTexture name="f" x="264" y="250" width="264" height="125" />
+<SubTexture name="g" x="528" y="250" width="264" height="125" />
+<SubTexture name="h" x="792" y="250" width="264" height="125" />
+<SubTexture name="i" x="0" y="375" width="264" height="125" />
+<SubTexture name="j" x="264" y="375" width="264" height="125" />
+<SubTexture name="k" x="528" y="375" width="264" height="125" />
+<SubTexture name="l" x="792" y="375" width="264" height="125" />
+<SubTexture name="m" x="0" y="500" width="264" height="125" />
+<SubTexture name="n" x="264" y="500" width="264" height="125" />
+<SubTexture name="o" x="528" y="500" width="264" height="125" />
+<SubTexture name="p" x="792" y="500" width="264" height="125" />
+<SubTexture name="q" x="0" y="625" width="264" height="125" />
+<SubTexture name="r" x="264" y="625" width="264" height="125" />
+<SubTexture name="s" x="528" y="625" width="264" height="125" />
+<SubTexture name="t" x="792" y="625" width="264" height="125" />
+<SubTexture name="u" x="0" y="750" width="264" height="125" />
+<SubTexture name="v" x="264" y="750" width="264" height="125" />
+<SubTexture name="w" x="528" y="750" width="264" height="125" />
+<SubTexture name="x" x="792" y="750" width="264" height="125" />
+<SubTexture name="y" x="0" y="875" width="264" height="125" />
+<SubTexture name="z" x="264" y="875" width="264" height="125" />
+<SubTexture name="zero" x="528" y="875" width="264" height="125" />
+<SubTexture name="one" x="792" y="875" width="264" height="125" />
+<SubTexture name="two" x="0" y="1000" width="264" height="125" />
+<SubTexture name="three" x="264" y="1000" width="264" height="125" />
+<SubTexture name="four" x="528" y="1000" width="264" height="125" />
+<SubTexture name="five" x="792" y="1000" width="264" height="125" />
+<SubTexture name="six" x="0" y="1125" width="264" height="125" />
+<SubTexture name="seven" x="263" y="1125" width="264" height="125" />
+<SubTexture name="eight" x="527" y="1125" width="264" height="125" />
+<SubTexture name="nine" x="791" y="1125" width="264" height="125" />
+</TextureAtlas>

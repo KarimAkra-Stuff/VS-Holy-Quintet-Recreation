@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Holy Quintet" file="Holy-Quintet" packageName="com.mobileporting.holyquintet" package="com.mobileporting.holyquintet" main="Main" version="0.2.8" company="HQ" />
+	<app title="Holy Quintet" file="Holy-Quintet" packageName="com.karimakra.holyquintet" package="com.karimakra.holyquintet" main="Main" version="0.3.0 Demo" company="HQ" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />

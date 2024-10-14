@@ -29,6 +29,9 @@ class MainMenuState extends MusicBeatState
 
     override public function create():Void
     {
+        Paths.clearStoredMemory();
+        Paths.setCurrentLevel('shared');
+
         persistentUpdate = persistentDraw = true;
 
         bg = new FlxSprite().loadGraphic(Paths.image(ASSETS_PATH + 'menuBG'));
@@ -77,10 +80,10 @@ class MainMenuState extends MusicBeatState
             }
 
             var atlasFolder:String = Paths.getAtlasPath('atlases/menu/animations/$name', 'images');
-
+            trace(atlasFolder + '/data.json');
             if (Assets.exists(atlasFolder + '/data.json'))
             {
-                // trace('adding animation data for $optionName');
+                trace('adding animation data for $optionName from ${atlasFolder + '/data.json'}');
                 atlasesSymbolData.set(optionName, haxe.Json.parse(Assets.getText(atlasFolder + '/data.json')));
             }
 
@@ -111,6 +114,10 @@ class MainMenuState extends MusicBeatState
                     insert(members.indexOf(logo) + 1, screen);
                     // add(screen);
                 itemsScreen.push(screen);
+            }
+            else
+            {
+                trace('no atlas symbol data for ${optionName} found');
             }
 
             lastOptionPoint.set(option.x, option.y);
@@ -181,6 +188,7 @@ class MainMenuState extends MusicBeatState
             {
                 if (atlasesSymbolData.exists(menuOptions[curSelected]))
                 {
+                    trace('current screen: ${menuOptions[curSelected]}');
                     member.anim.play('intro', true);
                     member.visible = true;
                 }

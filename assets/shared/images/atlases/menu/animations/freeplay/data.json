@@ -1,0 +1,9 @@
+{	
+	"name": "FREEPLAY",
+	"x": -65,
+	"y": -50,
+	"fps": 42,
+	"indicesIntro":[0, 51],
+	"indicesLoop": [51, 151],
+    "underneathOptionsBG": true
+}

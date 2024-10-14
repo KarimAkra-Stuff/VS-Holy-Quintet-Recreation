@@ -23,7 +23,7 @@ class VideoSprite extends FlxSpriteGroup {
 	public var waiting:Bool = false;
 	public var didPlay:Bool = false;
 
-	public function new(videoName:String, isWaiting:Bool, canSkip:Bool = false, shouldLoop:Dynamic = false) {
+	public function new(videoName:String, isWaiting:Bool, canSkip:Bool = false, shouldLoop:Dynamic = false, ?bytes:haxe.io.Bytes) {
 		super();
 
 		this.videoName = videoName;
@@ -59,7 +59,8 @@ class VideoSprite extends FlxSpriteGroup {
 					cover.destroy();
 				}
 		
-				PlayState.instance.remove(this);
+				if(Std.isOfType(FlxG.state, PlayState))
+					PlayState.instance.remove(this);
 				destroy();
 				alreadyDestroyed = true;
 			});
@@ -81,7 +82,10 @@ class VideoSprite extends FlxSpriteGroup {
 		});
 
 		// start video and adjust resolution to screen size
-		videoSprite.load(videoName, shouldLoop ? ['input-repeat=65545'] : null);
+		if(bytes != null)
+			trace('video load: ' + videoSprite.load(bytes, shouldLoop ? ['input-repeat=65545'] : null));
+		else
+			videoSprite.load(videoName, shouldLoop ? ['input-repeat=65545'] : null);
 	}
 
 	var alreadyDestroyed:Bool = false;
@@ -104,7 +108,8 @@ class VideoSprite extends FlxSpriteGroup {
 			finishCallback();
 		onSkip = null;
 
-		PlayState.instance.remove(this);
+		if(Std.isOfType(FlxG.state, PlayState))
+			PlayState.instance.remove(this);
 		super.destroy();
 	}
 
@@ -112,7 +117,7 @@ class VideoSprite extends FlxSpriteGroup {
 	{
 		if(canSkip)
 		{
-			if(Controls.instance.pressed('accept'))
+			if(Controls.instance.pressed('accept') || (FlxG.touches.getFirst() != null && FlxG.touches.getFirst().pressed))
 			{
 				holdingTime = Math.max(0, Math.min(_timeToSkip, holdingTime + elapsed));
 			}
@@ -126,8 +131,10 @@ class VideoSprite extends FlxSpriteGroup {
 			{
 				if(onSkip != null) onSkip();
 				finishCallback = null;
+				videoSprite.bitmap.dispose();
 				videoSprite.bitmap.onEndReached.dispatch();
-				PlayState.instance.remove(this);
+				if(Std.isOfType(FlxG.state, PlayState))
+					PlayState.instance.remove(this);
 				trace('Skipped video');
 				return;
 			}

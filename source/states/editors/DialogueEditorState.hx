@@ -16,7 +16,7 @@ import objects.TypedAlphabet;
 import cutscenes.DialogueBoxPsych;
 import cutscenes.DialogueCharacter;
 
-class DialogueEditorState extends MusicBeatState
+class DialogueEditorState extends backend.UIMusicBeatState
 {
 	var character:DialogueCharacter;
 	var box:FlxSprite;

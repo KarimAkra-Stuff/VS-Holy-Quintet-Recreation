@@ -1,0 +1,8 @@
+{	
+	"name": "STORY",
+	"x": -85,
+	"y": -50,
+	"fps": 42,
+	"indicesIntro":[0, 50],
+	"indicesLoop": [48, 150]
+}

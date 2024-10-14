@@ -1,0 +1,9 @@
+{	
+	"name": "CREDITS",
+	"x": -279.7,
+	"y": -202,
+    "scale": 0.95,
+	"fps": 42,
+	"indicesIntro":[0, 46],
+	"indicesLoop": [46, 165]
+}

@@ -1,0 +1,10 @@
+{	
+	"name": "SETTINGS",
+	"x": 6,
+	"y": 32,
+	"scale": 0.9,
+	"fps": 42,
+	"indicesIntro":[0, 51],
+	"indicesLoop": [51, 162],
+    "addInOne": false
+}

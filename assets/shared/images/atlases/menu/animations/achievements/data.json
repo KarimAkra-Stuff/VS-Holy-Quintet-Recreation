@@ -1,0 +1,8 @@
+{	
+	"name": "ACHIEVEMENTS",
+	"x": -40,
+	"y": 11,
+	"fps": 42,
+	"indicesIntro":[0, 48],
+	"indicesLoop": [48, 151]
+}

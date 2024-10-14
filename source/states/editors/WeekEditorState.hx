@@ -25,7 +25,7 @@ import objects.MenuItem;
 
 import states.editors.MasterEditorMenu;
 
-class WeekEditorState extends MusicBeatState
+class WeekEditorState extends backend.UIMusicBeatState
 {
 	var txtWeekTitle:FlxText;
 	var bgSprite:FlxSprite;
@@ -573,7 +573,7 @@ class WeekEditorState extends MusicBeatState
 	}
 }
 
-class WeekEditorFreeplayState extends MusicBeatState
+class WeekEditorFreeplayState extends backend.UIMusicBeatState
 {
 	var weekFile:WeekFile = null;
 	public function new(weekFile:WeekFile = null)

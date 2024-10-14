@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="madoka.png">
+	<!-- Created with Adobe Animate version 23.0.2.103 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="madoka0000" x="0" y="0" width="334" height="486" frameX="-15" frameY="-9" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0001" x="0" y="0" width="334" height="486" frameX="-15" frameY="-9" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0002" x="362" y="0" width="334" height="490" frameX="-12" frameY="-5" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0003" x="362" y="0" width="334" height="490" frameX="-12" frameY="-5" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0004" x="724" y="0" width="334" height="490" frameX="-17" frameY="-4" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0005" x="724" y="0" width="334" height="490" frameX="-17" frameY="-4" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0006" x="1086" y="0" width="333" height="489" frameX="-23" frameY="-6" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0007" x="1086" y="0" width="333" height="489" frameX="-23" frameY="-6" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0008" x="1447" y="0" width="333" height="488" frameX="-23" frameY="-7" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0009" x="1447" y="0" width="333" height="488" frameX="-23" frameY="-7" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0010" x="0" y="518" width="333" height="488" frameX="-22" frameY="-7" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0011" x="0" y="518" width="333" height="488" frameX="-22" frameY="-7" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0012" x="361" y="518" width="339" height="487" frameX="-26" frameY="-8" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0013" x="361" y="518" width="339" height="487" frameX="-26" frameY="-8" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0014" x="728" y="518" width="358" height="490" frameX="-26" frameY="-5" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0015" x="728" y="518" width="358" height="490" frameX="-26" frameY="-5" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0016" x="1114" y="518" width="351" height="490" frameX="-33" frameY="-4" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0017" x="1114" y="518" width="351" height="490" frameX="-33" frameY="-4" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0018" x="1493" y="518" width="358" height="491" frameX="-23" frameY="-3" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0019" x="1493" y="518" width="358" height="491" frameX="-23" frameY="-3" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0020" x="0" y="1037" width="359" height="494" frameX="-17" frameY="0" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0021" x="0" y="1037" width="359" height="494" frameX="-17" frameY="0" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0022" x="387" y="1037" width="369" height="492" frameX="-8" frameY="-2" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0023" x="387" y="1037" width="369" height="492" frameX="-8" frameY="-2" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0024" x="784" y="1037" width="377" height="492" frameX="0" frameY="-2" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0025" x="784" y="1037" width="377" height="492" frameX="0" frameY="-2" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0026" x="1189" y="1037" width="359" height="487" frameX="-4" frameY="-8" frameWidth="384" frameHeight="494"/>
+	<SubTexture name="madoka0027" x="1189" y="1037" width="359" height="487" frameX="-4" frameY="-8" frameWidth="384" frameHeight="494"/>
+</TextureAtlas>

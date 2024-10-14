@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="KYUBEYRUN.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="kyubey run instance 10000" x="1" y="1" width="209" height="98" frameX="0" frameY="-9" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10001" x="1" y="1" width="209" height="98" frameX="0" frameY="-9" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10002" x="211" y="1" width="203" height="96" frameX="-4" frameY="-10" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10003" x="211" y="1" width="203" height="96" frameX="-4" frameY="-10" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10004" x="1" y="100" width="199" height="99" frameX="-5" frameY="-9" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10005" x="1" y="100" width="199" height="99" frameX="-5" frameY="-9" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10006" x="201" y="100" width="189" height="103" frameX="-13" frameY="-4" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10007" x="201" y="100" width="189" height="103" frameX="-13" frameY="-4" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10008" x="1" y="204" width="193" height="103" frameX="-11" frameY="-4" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10009" x="1" y="204" width="193" height="103" frameX="-11" frameY="-4" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10010" x="195" y="204" width="205" height="103" frameX="-1" frameY="-3" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10011" x="195" y="204" width="205" height="103" frameX="-1" frameY="-3" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10012" x="1" y="308" width="212" height="90" frameX="-2" frameY="0" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10013" x="1" y="308" width="212" height="90" frameX="-2" frameY="0" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10014" x="214" y="308" width="214" height="94" frameX="0" frameY="-6" frameWidth="214" frameHeight="108"/>
+	<SubTexture name="kyubey run instance 10015" x="214" y="308" width="214" height="94" frameX="0" frameY="-6" frameWidth="214" frameHeight="108"/>
+</TextureAtlas>

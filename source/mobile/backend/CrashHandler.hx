@@ -66,6 +66,7 @@ class CrashHandler
 			LimeLogger.println('Couldn\'t save error message. (${e.message})');
 		#end
 
+		Sys.println(msg);
 		SUtil.showPopUp(msg, "Error!");
 
 		#if DISCORD_ALLOWED
@@ -117,6 +118,7 @@ class CrashHandler
 			LimeLogger.println('Couldn\'t save error message. (${e.message})');
 		#end
 
+		Sys.println(msg);
 		SUtil.showPopUp(msg, "Critical Error!");
 
 		#if DISCORD_ALLOWED

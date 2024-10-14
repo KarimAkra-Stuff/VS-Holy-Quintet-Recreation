@@ -19,7 +19,7 @@ import objects.TypedAlphabet;
 import cutscenes.DialogueBoxPsych;
 import cutscenes.DialogueCharacter;
 
-class DialogueCharacterEditorState extends MusicBeatState
+class DialogueCharacterEditorState extends backend.UIMusicBeatState
 {
 	var box:FlxSprite;
 	var daText:TypedAlphabet = null;

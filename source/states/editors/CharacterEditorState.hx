@@ -20,7 +20,7 @@ import objects.Character;
 import objects.HealthIcon;
 import objects.Bar;
 import mobile.flixel.FlxButton as MobileButton;
-class CharacterEditorState extends MusicBeatState
+class CharacterEditorState extends backend.UIMusicBeatState
 {
 	var character:Character;
 	var ghost:FlxSprite;

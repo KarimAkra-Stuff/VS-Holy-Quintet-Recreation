@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mami.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ICON0000" x="1" y="1" width="127" height="112" frameX="-1" frameY="-2" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0001" x="1" y="1" width="127" height="112" frameX="-1" frameY="-2" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0002" x="1" y="1" width="127" height="112" frameX="-1" frameY="-2" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0003" x="129" y="1" width="127" height="112" frameX="-1" frameY="-2" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0004" x="129" y="1" width="127" height="112" frameX="-1" frameY="-2" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0005" x="129" y="1" width="127" height="112" frameX="-1" frameY="-2" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0006" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0007" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0008" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0009" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0010" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0011" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0012" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0013" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0014" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0015" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0016" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0017" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0018" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0019" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0020" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0021" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0022" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0023" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0024" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0025" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0026" x="257" y="1" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0027" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0028" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0029" x="1" y="123" width="131" height="121" frameX="0" frameY="-1" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0030" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0031" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0032" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0033" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0034" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0035" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0036" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0037" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0038" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0039" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0040" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0041" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0042" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0043" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0044" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0045" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0046" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0047" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0048" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0049" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0050" x="133" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0051" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0052" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+	<SubTexture name="ICON0053" x="261" y="123" width="127" height="110" frameX="-11" frameY="0" frameWidth="138" frameHeight="122"/>
+</TextureAtlas>

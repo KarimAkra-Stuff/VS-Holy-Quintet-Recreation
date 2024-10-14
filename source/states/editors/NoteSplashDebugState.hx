@@ -8,7 +8,7 @@ import flixel.addons.ui.FlxUINumericStepper;
 
 using StringTools;
 
-class NoteSplashDebugState extends MusicBeatState
+class NoteSplashDebugState extends backend.UIMusicBeatState
 {
 	var config:NoteSplashConfig;
 	var forceFrame:Int = -1;

@@ -5,7 +5,7 @@ import flixel.addons.transition.FlxTransitionableState;
 import flixel.FlxState;
 import backend.PsychCamera;
 
-class MusicBeatState extends FlxUIState
+class MusicBeatState extends FlxState
 {
 	public static var instance:MusicBeatState;
 

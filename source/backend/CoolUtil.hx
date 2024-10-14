@@ -157,4 +157,26 @@ class CoolUtil
 				text.borderStyle = NONE;
 		}
 	}
+
+	public static function centerObjectInsideObject(object1:flixel.FlxObject, object2:flixel.FlxObject, axes:flixel.util.FlxAxes = XY):flixel.FlxObject
+	{
+		if (axes.x)
+			object1.x = ((object2.width - object1.width) / 2) + object2.x;
+
+		if (axes.y)
+			object1.y = ((object2.height - object1.height) / 2) + object2.y;
+
+		return object1;
+	}
+
+	public static function centerTextInsideObject(object1:FlxText, object2:flixel.FlxObject, axes:flixel.util.FlxAxes = XY):FlxText
+	{
+		if (axes.x)
+			object1.x = ((object2.width - object1.fieldWidth) / 2) + object2.x;
+
+		if (axes.y)
+			object1.y = ((object2.height - object1.fieldHeight) / 2) + object2.y;
+
+		return object1;
+	}
 }

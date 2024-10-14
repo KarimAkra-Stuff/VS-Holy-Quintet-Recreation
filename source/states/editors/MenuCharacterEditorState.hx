@@ -13,7 +13,7 @@ import openfl.net.FileFilter;
 import haxe.Json;
 import objects.MenuCharacter;
 
-class MenuCharacterEditorState extends MusicBeatState
+class MenuCharacterEditorState extends backend.UIMusicBeatState
 {
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 	var characterFile:MenuCharacterFile = null;

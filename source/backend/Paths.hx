@@ -1,5 +1,6 @@
 package backend;
 
+import haxe.io.Bytes;
 import flixel.graphics.frames.FlxFrame.FlxFrameAngle;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.graphics.FlxGraphic;
@@ -177,6 +178,11 @@ class Paths
 		}
 		#end
 		return 'assets/videos/$key.$VIDEO_EXT';
+	}
+
+	static public function videoBytes(key:String):Bytes
+	{
+		return Assets.getBytes('videos:${video(key)}');
 	}
 
 	static public function sound(key:String, ?library:String):Sound
@@ -571,8 +577,8 @@ class Paths
 	#if flxanimate
 	public static function getAtlasPath(atlasFolder:String, ?path:String, ?library:String)
 	{
-		if(path != null) return getPath('$path/$atlasFolder/', null, library, false, false);
-		else return getPath('$atlasFolder/', null, library, false, false);
+		if(path != null) return getPath('$path/$atlasFolder', null, library, false, false);
+		else return getPath('$atlasFolder', null, library, false, false);
 	}
 
 	public static function loadAnimateAtlas(spr:FlxAnimate, folderOrImg:Dynamic, spriteJson:Dynamic = null, animationJson:Dynamic = null)

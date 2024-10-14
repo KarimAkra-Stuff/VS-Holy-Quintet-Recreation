@@ -1,5 +1,6 @@
 package;
 
+import states.InitState;
 import debug.FPSCounter;
 import flixel.FlxGame;
 import haxe.io.Path;
@@ -12,6 +13,7 @@ import states.TitleState;
 import openfl.events.KeyboardEvent;
 import mobile.states.CopyState;
 import mobile.objects.MobileControls;
+import openfl.filters.BlurFilter;
 #if linux
 import lime.graphics.Image;
 
@@ -25,7 +27,7 @@ class Main extends Sprite
 	var game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
-		initialState: TitleState, // initial game state
+		initialState: InitState, // initial game state
 		zoom: -1.0, // game state bounds
 		framerate: 60, // default framerate
 		skipSplash: true, // if the default flixel splash screen should be skipped
@@ -35,6 +37,8 @@ class Main extends Sprite
 	public static var fpsVar:FPSCounter;
 
 	public static final platform:String = #if mobile "Phones" #else "PCs" #end;
+
+    public static var BLUR_SHADER:BlurFilter;
 	
 	// You can pretty much ignore everything from here on - your code should go in your states.
 

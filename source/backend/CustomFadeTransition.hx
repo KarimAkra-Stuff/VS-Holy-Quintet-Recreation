@@ -5,9 +5,12 @@ import flixel.FlxSubState;
 
 class CustomFadeTransition extends FlxSubState {
 	public static var finishCallback:Void->Void;
+	public static var kyubeyFrame:Int = 0;
 	var isTransIn:Bool = false;
 	var transBlack:FlxSprite;
 	var transGradient:FlxSprite;
+	var kyubey:FlxSprite;
+	var loadingText:FlxText;
 
 	var duration:Float;
 	public function new(duration:Float, isTransIn:Bool)
@@ -36,10 +39,41 @@ class CustomFadeTransition extends FlxSubState {
 		transBlack.screenCenter(X);
 		add(transBlack);
 
+		kyubey = new FlxSprite();
+		kyubey.frames = Paths.getSparrowAtlas('interfaces/common/KYUBEYRUN');
+		kyubey.animation.addByPrefix('run', 'kyubey run instance 1', 24, true);
+		kyubey.animation.play('run', true, false, kyubeyFrame);
+		add(kyubey);
+		
+		loadingText = new FlxText();
+		loadingText.text = 'Loading';
+		loadingText.setFormat(Paths.font('shingo.otf'), 36, FlxTextBorderStyle.OUTLINE);
+		loadingText.borderQuality = 5.0;
+		add(loadingText);
+
+		kyubey.setPosition(FlxG.width - kyubey.width - 40, FlxG.height);
+		loadingText.setPosition(kyubey.x - loadingText.width - 30, FlxG.height);
+
 		if(isTransIn)
+		{
 			transGradient.y = transBlack.y - transBlack.height;
+
+			kyubey.y -= kyubey.height + 15;
+			loadingText.y -= loadingText.height + 27;
+
+			FlxTween.tween(kyubey, {x: FlxG.width + 10, alpha: 0}, 0.6, {ease: FlxEase.sineOut});
+			FlxTween.tween(loadingText, {alpha: 0}, 0.6, {ease: FlxEase.sineOut});
+		}
 		else
+		{
 			transGradient.y = -transGradient.height;
+
+			kyubey.alpha = 0.0;
+			loadingText.alpha = 0.0;
+
+			FlxTween.tween(kyubey, {y: kyubey.y - (kyubey.height + 15), alpha: 1}, 0.4, {ease: FlxEase.sineOut});
+			FlxTween.tween(loadingText, {y: loadingText.y - (loadingText.height + 27), alpha: 1}, 0.4, {ease: FlxEase.sineOut});
+		}
 
 		super.create();
 	}

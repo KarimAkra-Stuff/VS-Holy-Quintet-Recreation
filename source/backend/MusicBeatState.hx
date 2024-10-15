@@ -103,6 +103,7 @@ class MusicBeatState extends FlxState
 
 		if(!skip) {
 			openSubState(new CustomFadeTransition(0.6, true));
+			CustomFadeTransition.kyubeyFrame = 0;
 		}
 		FlxTransitionableState.skipNextTransOut = false;
 		timePassedOnState = 0;

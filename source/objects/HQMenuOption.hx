@@ -65,7 +65,7 @@ class HQMenuOption extends FlxSpriteGroup
             flash.y += 2;
             // CoolUtil.centerObjectInsideObject(flash, button);
             add(flash);
-            FlxTween.tween(flash, {"scale.x": 1.13, "scale.y": 1.13, "alpha": 0.0}, 1.4, {
+            FlxTween.tween(flash, {"scale.x": 1.13, "scale.y": 1.13, "alpha": 0.0}, 1.6, {
                 ease: FlxEase.circOut, 
                 onComplete: (_) -> {
                     flash.destroy();

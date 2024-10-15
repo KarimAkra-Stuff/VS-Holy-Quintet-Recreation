@@ -57,7 +57,6 @@ class MainMenuState extends MusicBeatState
         var lastOptionPoint:FlxPoint = FlxPoint.get();
         for (i => optionName in menuOptions)
         {
-            trace('creating option $optionName (id: $i)');
             var name:String = optionName.toLowerCase();
             var option:HQMenuOption = new HQMenuOption(optionName, optionsLock[i]);
             option.isSelected = false;
@@ -210,7 +209,6 @@ class MainMenuState extends MusicBeatState
             {
                 if (atlasesSymbolData.exists(key))
                 {
-                    trace('current screen: $key');
                     members[0].anim.play('intro', true);
                     members[0].visible = true;
                     members[1].visible = true;

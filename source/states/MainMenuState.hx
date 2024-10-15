@@ -22,9 +22,9 @@ class MainMenuState extends MusicBeatState
     var logo:FlxSprite;
     
     var menuItems:FlxTypedGroup<HQMenuOption>;
-    var itemsScreen:Array<FlxAnimate> = [];
+    var itemsScreen:Map<String, Array<FlxAnimate>> = [];
 
-    final atlasesSymbolData:Map<String, {name:String, x:Float, y:Float, ?scale:Float, fps:Int, indicesIntro:Array<Int>, indicesLoop:Array<Int>, ?underneathOptionsBG:Bool, ?addInOne:Bool}> = [];
+    final atlasesSymbolData:Map<String, {name:String, x:Float, y:Float, ?scale:Float, fps:Int, indicesIntro:Array<Int>, indicesLoop:Array<Int>, ?underneathOptionsBG:Bool}> = [];
     var busy:Bool = false;
 
     override public function create():Void
@@ -76,11 +76,10 @@ class MainMenuState extends MusicBeatState
             if (i == 2)
             {
                 option.text.scale.x = 0.85;
-                option.text.x -= 36;
+                option.text.x -= 35;
             }
 
             var atlasFolder:String = Paths.getAtlasPath('atlases/menu/animations/$name', 'images');
-            trace(atlasFolder + '/data.json');
             if (Assets.exists(atlasFolder + '/data.json'))
             {
                 trace('adding animation data for $optionName from ${atlasFolder + '/data.json'}');
@@ -90,30 +89,51 @@ class MainMenuState extends MusicBeatState
             if (atlasesSymbolData.exists(optionName))
             {
                 var symbolData = atlasesSymbolData.get(optionName);
-                // trace(symbolData);
-                var screen:FlxAnimate = new FlxAnimate(symbolData.x, symbolData.y);
-                screen.loadAtlas(atlasFolder);
+
+                var screenIntro:FlxAnimate = new FlxAnimate(symbolData.x, symbolData.y);
+                var screenLoop:FlxAnimate = new FlxAnimate(symbolData.x, symbolData.y);
+
+                screenIntro.loadAtlas(atlasFolder);
+                screenLoop.loadAtlas(atlasFolder);
+
                 if (symbolData.scale != null)
-                    screen.scale.set(symbolData.scale, symbolData.scale);
-                if (symbolData.addInOne == true)
                 {
-                    screen.anim.addBySymbol('intro', symbolData.name, symbolData.fps, false);
+                    screenIntro.scale.set(symbolData.scale, symbolData.scale);
+                    screenLoop.scale.set(symbolData.scale, symbolData.scale);
                 }
-                else
-                {
-                    screen.anim.addBySymbolIndices('intro', symbolData.name, [for (i in symbolData.indicesIntro[0]...symbolData.indicesIntro[1]) i], symbolData.fps, false);
-                    screen.anim.addBySymbolIndices('loop', symbolData.name, [for (i in symbolData.indicesLoop[0]...symbolData.indicesLoop[1]) i], symbolData.fps);
-                    screen.anim.onComplete.add(() -> {
-                        if (screen.anim.curSymbol.name == 'intro')
-                            screen.anim.play('loop', true);
-                    });
-                }
+
+                screenIntro.anim.addBySymbolIndices('intro', symbolData.name, [for (i in symbolData.indicesIntro[0]...symbolData.indicesIntro[1]) i], symbolData.fps, false);
+                screenLoop.anim.addBySymbolIndices('loop', symbolData.name, [for (i in symbolData.indicesLoop[0]...symbolData.indicesLoop[1]) i], symbolData.fps, true);
+
+                screenIntro.anim.play('intro', true);
+                screenLoop.anim.play('loop', true);
+
+                screenIntro.anim.onFrame.add((frame:Int) -> {
+                    if (frame < 5)
+                    {
+                        screenIntro.alpha = 1.0;
+                        screenLoop.alpha = 0.0;
+                    }
+                });
+
+                screenIntro.anim.onComplete.add(() -> {
+                    screenIntro.alpha = 0.0;
+                    screenLoop.alpha = 1.0;
+                    screenLoop.anim.play('loop', true);
+                });
+
                 if (symbolData.underneathOptionsBG == true)
-                    insert(members.indexOf(optionsBG), screen);
+                {
+                    insert(members.indexOf(optionsBG), screenIntro);
+                    insert(members.indexOf(optionsBG), screenLoop);
+                }
                 else
-                    insert(members.indexOf(logo) + 1, screen);
-                    // add(screen);
-                itemsScreen.push(screen);
+                {
+                    insert(members.indexOf(logo) + 1, screenIntro);
+                    insert(members.indexOf(logo) + 2, screenLoop);
+                }
+
+                itemsScreen.set(optionName, [screenIntro, screenLoop]);
             }
             else
             {
@@ -182,20 +202,24 @@ class MainMenuState extends MusicBeatState
         for (i => member in menuItems.members)
             member.isSelected = i == curSelected;
 
-        for (i => member in itemsScreen)
+        for (key in itemsScreen.keys())
         {
+            var i = menuOptions.indexOf(key);
+            var members = itemsScreen.get(key);
             if (i == curSelected)
             {
-                if (atlasesSymbolData.exists(menuOptions[curSelected]))
+                if (atlasesSymbolData.exists(key))
                 {
-                    trace('current screen: ${menuOptions[curSelected]}');
-                    member.anim.play('intro', true);
-                    member.visible = true;
+                    trace('current screen: $key');
+                    members[0].anim.play('intro', true);
+                    members[0].visible = true;
+                    members[1].visible = true;
                 }
             }
             else
             {
-                member.visible = false;
+                members[0].visible = false;
+                members[1].visible = false;
             }
         }
 

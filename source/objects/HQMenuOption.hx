@@ -102,8 +102,10 @@ class HQMenuOption extends FlxSpriteGroup
         {
             button.animation.play('selected');
             button.updateHitbox();
-            text.color = FlxColor.WHITE;
             button.color = FlxColor.fromInt(0x00FFFFFF);
+            text.y -= 10;
+            FlxTween.tween(text, {y: text.y + 10}, 0.2, {ease: FlxEase.sineOut});
+            text.color = FlxColor.WHITE;
 
             highlighTween = FlxTween.tween(highlight, {"scale.x": 1.11, "scale.y": 1.11, "alpha": 0.0}, 0.8, {
                 ease: FlxEase.circOut, 

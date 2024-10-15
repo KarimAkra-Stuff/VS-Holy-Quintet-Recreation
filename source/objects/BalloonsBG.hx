@@ -5,33 +5,32 @@ import flixel.math.FlxPoint;
 
 class BalloonsBG extends FlxBackdrop
 {
+    var finishedTween:Bool = false;
+
     public function new()
     {
         super(Paths.image('interfaces/main/menuCircles'));
+        velocity.set(100, 40);
+        FlxTween.tween(velocity, {x: 0}, 1.8, {ease: FlxEase.sineInOut, onComplete: (_) -> finishedTween = true});
     }
 
     override public function update(elapsed:Float):Void
     {
-        // TODO: improve this
-        if(FlxG.mouse.justMoved)
+        if(FlxG.mouse.justMoved && finishedTween)
         {
             var deltaScreen:FlxPoint = FlxPoint.get(FlxG.mouse.deltaScreenX, FlxG.mouse.deltaScreenY);
-            var changeX:Bool = (deltaScreen.x > 5 || deltaScreen.x < -5);
-            var changeY:Bool = (deltaScreen.y > 5 || deltaScreen.y < -5);
-            if (changeX || changeY)
+
+            velocity.x += deltaScreen.x;
+            velocity.x = FlxMath.bound(velocity.x, -45, 45);
+
+            if (deltaScreen.y > 5 || deltaScreen.y < -5)
             {
-                if (changeX)
-                    velocity.x = FlxMath.bound(deltaScreen.x, -45, 45);
-                if (changeY)
-                    velocity.y = FlxMath.bound(deltaScreen.y, 10, 60);
+                velocity.y += deltaScreen.y;
+                velocity.y = FlxMath.bound(velocity.y, 5, 60);
             }
+
             deltaScreen.put();
         }
-
-        // FlxG.watch.addQuick('velocity X', velocity.x);
-        // FlxG.watch.addQuick('velocity y', velocity.y);
-        // FlxG.watch.addQuick('delta X', FlxG.mouse.deltaScreenX);
-        // FlxG.watch.addQuick('delta Y', FlxG.mouse.deltaScreenY);
 
         super.update(elapsed);
     }

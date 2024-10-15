@@ -355,6 +355,7 @@ class FlxAnim implements IFlxDestroyable
 			return;
 		}
 		var params = new FlxElement(new SymbolParameters((Looped) ? Loop : PlayOnce), new FlxMatrix(1,0,0,1,X,Y));
+		// this sytem sucks it keeps adding wrong symbols
 		// for (name in symbolDictionary.keys())
 		// {
 		// 	if (startsWith(name, SymbolName))

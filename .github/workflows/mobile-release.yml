@@ -80,12 +80,12 @@ jobs:
           cd export/release/ios/build/Release-iphoneos
           mkdir Payload
           mv *.app Payload
-          zip -r HolyQuintet.ipa Payload
+          zip -r Holy-Quintet.ipa Payload
 
       - name: Make Zip For Release
         run: |
            cd export/release/ios/build/Release-iphoneos
-           zip HolyQuintet-iOS.zip HolyQuintet.ipa
+           zip Holy-Quintet-iOS.zip Holy-Quintet.ipa
 
       - name: Upload Artifact
         if: ${{ success() }}
@@ -106,7 +106,7 @@ jobs:
            path: /home/runner
 
       - name: Move Androd File
-        run: mv /home/runner/HolyQuintet-release.apk /home/runner/HolyQuintet-Android.apk
+        run: mv /home/runner/Holy-Quintet-release.apk /home/runner/Holy-Quintet-Android.apk
 
       - name: Download iOS Build
         uses: actions/download-artifact@main

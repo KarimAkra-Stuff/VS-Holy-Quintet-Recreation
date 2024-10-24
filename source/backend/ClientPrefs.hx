@@ -7,14 +7,14 @@ import states.InitState;
 
 // Add a variable here and it will get automatically saved
 @:structInit class SaveVariables {
-        // Mobile Controls Releated
+    // Mobile Controls Releated
 	public var extraButtons:String = "NONE"; // mobile extra button option
 	public var hitbox2:Bool = true; // hitbox extra button position option
 	public var dynamicColors:Bool = true; // yes cause its cool -Karim
 	public var controlsAlpha:Float = FlxG.onMobile ? 0.6 : 0.001;
 	public var screensaver:Bool = false;
-        public var hideHitboxHints:Bool = false;
-        // end of Mobile Controls Releated
+    public var hideHitboxHints:Bool = false;
+
 	public var popUpRating:Bool = true;
 	public var downScroll:Bool = false;
 	public var middleScroll:Bool = false;
@@ -46,7 +46,7 @@ import states.InitState;
 		[0xFFFF884E, 0xFFFFFAF5, 0xFF6C0000]];
 
 	public var ghostTapping:Bool = true;
-	public var timeBarType:String = 'Time Left';
+	public var timeBarType:String = 'Disabled';
 	public var scoreZoom:Bool = true;
 	public var noReset:Bool = false;
 	public var healthBarAlpha:Float = 1;

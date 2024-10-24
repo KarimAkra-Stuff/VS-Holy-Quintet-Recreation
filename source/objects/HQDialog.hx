@@ -26,8 +26,8 @@ class HQDialog extends MusicBeatSubstate
         FlxG.cameras.add(cam, false);
         cameras = [cam];
 
-        for(i in 0...FlxG.cameras.list.length - 2)
-            FlxG.cameras.list[i].filters = [Main.BLUR_SHADER];
+        // for(i in 0...FlxG.cameras.list.length - 2)
+        //     FlxG.cameras.list[i].filters = [Main.BLUR_SHADER];
 
         var bg = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
         bg.scrollFactor.set();
@@ -124,13 +124,16 @@ class HQDialog extends MusicBeatSubstate
         if (controls.UI_LEFT_P || controls.UI_RIGHT_P)
     		FlxG.sound.play(Paths.sound('scrollMenu'));
 
+        addVirtualPad('LEFT_RIGHT', 'A');
+        virtualPad.cameras = [cam];
+
         super.update(elapsed);
     }
 
     override public function destroy():Void
     {
-        for(i in 0...FlxG.cameras.list.length)
-            FlxG.cameras.list[i].filters = [];
+        // for(i in 0...FlxG.cameras.list.length)
+        //     FlxG.cameras.list[i].filters = [];
         FlxTween.cancelTweensOf(cam);
         FlxTween.cancelTweensOf(colorSwap);
         if (notice != null)

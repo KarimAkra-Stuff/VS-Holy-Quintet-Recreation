@@ -85,6 +85,13 @@ class Paths
 		// flags everything to be cleared out next unused memory clear
 		localTrackedAssets = [];
 		#if !html5 openfl.Assets.cache.clear("songs"); #end
+		// run the garbage collector for good measure lmfao
+		System.gc();
+		#if cpp
+		cpp.NativeGc.run(true);
+		#elseif hl
+		hl.Gc.major();
+		#end
 	}
 
 	static public var currentLevel:String;
@@ -577,8 +584,13 @@ class Paths
 	#if flxanimate
 	public static function getAtlasPath(atlasFolder:String, ?path:String, ?library:String)
 	{
-		if(path != null) return getPath('$path/$atlasFolder', null, library, false, false);
-		else return getPath('$atlasFolder', null, library, false, false);
+		var prevLevel = currentLevel == null ? 'shared' : currentLevel;
+		if (library == null)
+			setCurrentLevel('shared');
+		var retVal = path == null ? getPath('$atlasFolder', null, library, false, false) : getPath('$path/$atlasFolder', null, library, false, false);
+		if (library == null)
+			setCurrentLevel(prevLevel);
+		return retVal;
 	}
 
 	public static function loadAnimateAtlas(spr:FlxAnimate, folderOrImg:Dynamic, spriteJson:Dynamic = null, animationJson:Dynamic = null)

@@ -1,0 +1,531 @@
+{
+	"song": {
+		"events": [
+			[
+				11194.0298507463,
+				[
+					[
+						"Set Property",
+						"cameraSpeed",
+						"3.0"
+					],
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"8,0.10,quadInOut"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"4,75,y,quadInOut"
+					]
+				]
+			],
+			[
+				11305.9701492537,
+				[
+					[
+						"Set Property",
+						"cameraSpeed",
+						"1.0"
+					]
+				]
+			],
+			[
+				11641.7910447761,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"50"
+					]
+				]
+			],
+			[
+				12089.552238806,
+				[
+					[
+						"Song Event",
+						"heal",
+						"on"
+					]
+				]
+			],
+			[
+				13432.8358208955,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"85"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.15,quadOut"
+					]
+				]
+			],
+			[
+				13880.5970149254,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"125"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.20,quadOut"
+					]
+				]
+			],
+			[
+				14328.3582089552,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"0"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.0,expoOut"
+					],
+					[
+						"Add Camera Zoom",
+						"0.25",
+						"0.03"
+					],
+					[
+						"Adjust Camera",
+						"focus",
+						""
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"0,0,y"
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"8,1.0"
+					]
+				]
+			],
+			[
+				26865.6716417911,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"25"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.05,backOut"
+					],
+					[
+						"Set Property",
+						"cameraSpeed",
+						"2"
+					]
+				]
+			],
+			[
+				27201.4925373134,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"50"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.1,backOut"
+					]
+				]
+			],
+			[
+				27537.3134328358,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"75"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.15,backOut"
+					]
+				]
+			],
+			[
+				27873.1343283582,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"100"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"2,0.20,backOut"
+					]
+				]
+			],
+			[
+				28208.9552238806,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"125"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"3,0.6,expoOut"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"3,0.0,game,expoOut"
+					]
+				]
+			],
+			[
+				28544.776119403,
+				[
+					[
+						"Set Property",
+						"camSwayAmount",
+						"0.0"
+					],
+					[
+						"Adjust Camera",
+						"snap",
+						"true"
+					]
+				]
+			],
+			[
+				28656.7164179105,
+				[
+					[
+						"Song Event",
+						"shader-dither",
+						"add"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"8,1.0,game,expoOut"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"8,0.20,expoOut"
+					]
+				]
+			],
+			[
+				31343.2835820896,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				34029.8507462687,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0,0.225"
+					]
+				]
+			],
+			[
+				34365.6716417911,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0,0.25"
+					]
+				]
+			],
+			[
+				34701.4925373134,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0,0.275"
+					]
+				]
+			],
+			[
+				35037.3134328358,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0,0.3"
+					]
+				]
+			],
+			[
+				35373.1343283582,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0,0.325"
+					]
+				]
+			],
+			[
+				35597.0149253731,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0,0.35"
+					]
+				]
+			],
+			[
+				35708.9552238806,
+				[
+					[
+						"Adjust Camera",
+						"snap",
+						"false"
+					],
+					[
+						"Set Property",
+						"camSwayAmount",
+						"15.0"
+					]
+				]
+			],
+			[
+				35820.8955223881,
+				[
+					[
+						"Song Event",
+						"shader-dither",
+						"remove"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"4,0.0,quadOut"
+					],
+					[
+						"Adjust Camera",
+						"focus",
+						""
+					],
+					[
+						"Song Event",
+						"black bars",
+						"0"
+					]
+				]
+			],
+			[
+				45671.6417910448,
+				[
+					[
+						"Song Event",
+						"heal",
+						"off"
+					]
+				]
+			],
+			[
+				69850.7462686567,
+				[
+					[
+						"Set Property",
+						"cameraSpeed",
+						"8.0"
+					],
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"3,0.05,quadOut"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"75"
+					]
+				]
+			],
+			[
+				69962.6865671642,
+				[
+					[
+						"Set Property",
+						"cameraSpeed",
+						"1.0"
+					]
+				]
+			],
+			[
+				70186.5671641791,
+				[
+					[
+						"Song Event",
+						"heal",
+						"on"
+					]
+				]
+			],
+			[
+				71641.7910447761,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						""
+					],
+					[
+						"Song Event",
+						"black bars",
+						"0"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"4,0.0,quadOut"
+					]
+				]
+			],
+			[
+				99291.0447761195,
+				[
+					[
+						"Song Event",
+						"heal",
+						"off"
+					]
+				]
+			],
+			[
+				128059.701492537,
+				[
+					[
+						"Song Event",
+						"heal",
+						"on"
+					]
+				]
+			],
+			[
+				154029.850746269,
+				[
+					[
+						"Song Event",
+						"heal",
+						"off"
+					]
+				]
+			],
+			[
+				157611.940298508,
+				[
+					[
+						"Adjust Camera",
+						"zoom",
+						"32,-0.05,sineInOut"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"32,-1000,y,sineInOut"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"32,0,x,sineInOut"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"24,0.0,game,sineIn"
+					],
+					[
+						"Adjust Camera",
+						"",
+						""
+					]
+				]
+			],
+			[
+				160298.507462687,
+				[
+					[
+						"Song Event",
+						"Perfect Check",
+						""
+					]
+				]
+			]
+		]
+	}
+}

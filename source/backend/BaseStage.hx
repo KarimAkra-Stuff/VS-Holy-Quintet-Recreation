@@ -15,9 +15,10 @@ enum Countdown
 	START;
 }
 
+@:access(states.PlayState)
 class BaseStage extends FlxBasic
 {
-	private var game(get, never):Dynamic;
+	private var game(get, never):PlayState;
 	public var onPlayState(get, never):Bool;
 
 	// some variables for convenience
@@ -31,6 +32,7 @@ class BaseStage extends FlxBasic
 
 	public var boyfriend(get, never):Character;
 	public var dad(get, never):Character;
+	public var boombox(get, never):Character;
 	public var gf(get, never):Character;
 	public var boyfriendGroup(get, never):FlxSpriteGroup;
 	public var dadGroup(get, never):FlxSpriteGroup;
@@ -60,6 +62,7 @@ class BaseStage extends FlxBasic
 
 	//main callbacks
 	public function create() {}
+	public function characterPost() {}
 	public function createPost() {}
 	//public function update(elapsed:Float) {}
 	public function countdownTick(count:Countdown, num:Int) {}
@@ -136,11 +139,12 @@ class BaseStage extends FlxBasic
 	}
 	inline private function get_members() return game.members;
 
-	inline private function get_game() return cast FlxG.state;
+	inline private function get_game() return cast (FlxG.state, states.PlayState);
 	inline private function get_onPlayState() return (Std.isOfType(FlxG.state, states.PlayState));
 
 	inline private function get_boyfriend():Character return game.boyfriend;
 	inline private function get_dad():Character return game.dad;
+	inline private function get_boombox():Character return game.boombox;
 	inline private function get_gf():Character return game.gf;
 
 	inline private function get_boyfriendGroup():FlxSpriteGroup return game.boyfriendGroup;

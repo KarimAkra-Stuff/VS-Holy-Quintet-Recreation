@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="speakersmain.png" width="1518" height="1388">
+	<SubTexture name="speaker dancing beat0000" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0001" x="750" y="1" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0002" x="1" y="348" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0003" x="750" y="348" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0004" x="1" y="695" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0005" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0006" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0007" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0008" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0009" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0010" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0011" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0012" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0013" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0014" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0015" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0016" x="750" y="695" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0017" x="750" y="1" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0018" x="1" y="348" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0019" x="750" y="348" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0020" x="1" y="695" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0021" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0022" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0023" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0024" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0025" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0026" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0027" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0028" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker dancing beat0029" x="1" y="1" width="747" height="345" frameX="-5" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0000" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0001" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0002" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0003" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0004" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0005" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0006" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0007" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0008" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0009" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0010" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0011" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0012" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0013" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0014" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0015" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0016" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0017" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0018" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0019" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0020" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0021" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0022" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0023" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0024" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0025" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0026" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0027" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0028" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0029" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0030" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0031" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0032" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0033" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker hey0034" x="1" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0000" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0001" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0002" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0003" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0004" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0005" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0006" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0007" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0008" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0009" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0010" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0011" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0012" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0013" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0014" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0015" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0016" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0017" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0018" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0019" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0020" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0021" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0022" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0023" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0024" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0025" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0026" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0027" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0028" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0029" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0030" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0031" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0032" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0033" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+	<SubTexture name="speaker sad0034" x="760" y="1042" width="757" height="345" frameX="-0" frameY="-0" frameWidth="757" frameHeight="345"/>
+</TextureAtlas>

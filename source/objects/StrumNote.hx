@@ -144,6 +144,7 @@ class StrumNote extends FlxSprite
 		x += Note.swagWidth * noteData;
 		x += 50;
 		x += ((FlxG.width / 2) * player);
+		x += 15 * (noteData - 1);
 		ID = noteData;
 	}
 

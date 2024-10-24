@@ -1,6 +1,7 @@
 package objects;
 
 import flixel.math.FlxRect;
+import shaders.ColorSwap;
 
 class Bar extends FlxSpriteGroup
 {
@@ -18,6 +19,8 @@ class Bar extends FlxSpriteGroup
 	public var barHeight(default, set):Int = 1;
 	public var barOffset:FlxPoint = FlxPoint.get(3, 3);
 
+	public var colorSwap:ColorSwap = new ColorSwap();
+
 	public function new(x:Float, y:Float, image:String = 'healthBar', valueFunction:Void->Float = null, boundX:Float = 0, boundY:Float = 1)
 	{
 		super(x, y);
@@ -27,15 +30,18 @@ class Bar extends FlxSpriteGroup
 		
 		bg = new FlxSprite().loadGraphic(Paths.image(image));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
+		bg.shader = colorSwap.shader;
 		barWidth = Std.int(bg.width - 6);
 		barHeight = Std.int(bg.height - 6);
 
 		leftBar = new FlxSprite().makeGraphic(Std.int(bg.width), Std.int(bg.height), FlxColor.WHITE);
 		//leftBar.color = FlxColor.WHITE;
+		leftBar.shader = colorSwap.shader;
 		leftBar.antialiasing = antialiasing = ClientPrefs.data.antialiasing;
 
 		rightBar = new FlxSprite().makeGraphic(Std.int(bg.width), Std.int(bg.height), FlxColor.WHITE);
 		rightBar.color = FlxColor.BLACK;
+		rightBar.shader = colorSwap.shader;
 		rightBar.antialiasing = ClientPrefs.data.antialiasing;
 
 		add(leftBar);
@@ -62,6 +68,27 @@ class Bar extends FlxSpriteGroup
 		}
 		else percent = 0;
 		super.update(elapsed);
+	}
+
+	public function glow()
+	{
+		FlxTween.cancelTweensOf(colorSwap);
+		colorSwap.brightness = 0.0;
+		FlxTween.tween(colorSwap, {brightness: 0.4}, 0.8, {ease: FlxEase.quadInOut, type: FlxTweenType.PINGPONG});
+	}
+
+	public function normal()
+	{
+		FlxTween.cancelTweensOf(colorSwap);
+		FlxTween.tween(colorSwap, {brightness: 0.0}, 0.8, {ease: FlxEase.quadInOut});
+
+	}
+
+	public function darken()
+	{
+		FlxTween.cancelTweensOf(colorSwap);
+		colorSwap.brightness = 0.0;
+		FlxTween.tween(colorSwap, {brightness: -0.35}, 0.8, {ease: FlxEase.quadInOut, type: FlxTweenType.PINGPONG});
 	}
 	
 	public function setBounds(min:Float, max:Float)

@@ -1,6 +1,6 @@
 package shaders;
 
-import flixel.system.FlxAssets.FlxShader;
+import shaders.FlxShader;
 
 class OverlayShader extends FlxShader
 {

@@ -1,0 +1,32 @@
+{
+	"directory": "chapter1",
+	"defaultZoom": 0.55,
+	"stageUI": "",
+
+	"boyfriend": [600, 500],
+	"girlfriend": [-135, -15],
+	"opponent": [-280, 500],
+	"hide_girlfriend": false,
+
+	"camera_boyfriend": [-40, -50],
+	"camera_opponent": [40, -50],
+	"camera_girlfriend": [0, 0],
+	"camera_speed": 1,
+
+	"preload": {
+		"images":
+		[
+			"resonace/background_bg",
+			"resonace/middleground_fog",
+			"resonace/foreground_flowerL",
+			"resonace/foreground_flowerR"
+		],
+		"images_low":
+		[
+			"resonace/background_bg",
+			"resonace/middleground_fog",
+			"resonace/foreground_flowerL",
+			"resonace/foreground_flowerR"
+		]
+	}
+}

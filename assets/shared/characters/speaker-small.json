@@ -1,0 +1,35 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": true,
+			"name": "speaker single instance 1"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/speakerssmall",
+	"position": [
+		520,
+		370
+	],
+	"healthicon": "face",
+	"char_zoom": 0,
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		-150,
+		-80
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1
+}

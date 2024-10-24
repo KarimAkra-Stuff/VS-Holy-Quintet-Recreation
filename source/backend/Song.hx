@@ -17,6 +17,7 @@ typedef SwagSong =
 	var player1:String;
 	var player2:String;
 	var gfVersion:String;
+	@:optional var speaker:String;
 	var stage:String;
 
 	@:optional var gameOverChar:String;

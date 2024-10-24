@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="KYOKOCUTIN.png" width="1795" height="1629">
+	<SubTexture name="KYOKOCUTIN instance 10000" x="1" y="1" width="362" height="160" frameX="-137" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10001" x="1" y="1" width="362" height="160" frameX="-137" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10002" x="1" y="164" width="350" height="160" frameX="-140" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10003" x="1" y="164" width="350" height="160" frameX="-140" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10004" x="366" y="1" width="357" height="160" frameX="-141" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10005" x="366" y="1" width="357" height="160" frameX="-141" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10006" x="1" y="327" width="366" height="160" frameX="-136" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10007" x="1" y="327" width="366" height="160" frameX="-136" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10008" x="726" y="1" width="370" height="160" frameX="-134" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10009" x="726" y="1" width="370" height="160" frameX="-134" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10010" x="726" y="1" width="370" height="160" frameX="-134" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10011" x="726" y="1" width="370" height="160" frameX="-134" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10012" x="726" y="1" width="370" height="160" frameX="-134" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10013" x="726" y="1" width="370" height="160" frameX="-134" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10014" x="1" y="490" width="692" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10015" x="354" y="164" width="692" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10016" x="1" y="653" width="709" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10017" x="370" y="327" width="709" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10018" x="1" y="816" width="710" height="160" frameX="-2" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10019" x="1049" y="164" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10020" x="696" y="490" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10021" x="1" y="979" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10022" x="713" y="653" width="710" height="160" frameX="-2" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10023" x="1082" y="327" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10024" x="696" y="490" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10025" x="1" y="979" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10026" x="713" y="653" width="710" height="160" frameX="-2" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10027" x="1082" y="327" width="712" height="160" frameX="-0" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10028" x="1099" y="1" width="471" height="160" frameX="-157" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10029" x="1099" y="1" width="471" height="160" frameX="-157" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10030" x="1" y="1142" width="370" height="160" frameX="-257" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10031" x="1" y="1142" width="370" height="160" frameX="-257" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10032" x="714" y="816" width="361" height="160" frameX="-261" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10033" x="714" y="816" width="361" height="160" frameX="-261" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10034" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10035" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10036" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10037" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10038" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10039" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10040" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10041" x="1411" y="490" width="363" height="160" frameX="-260" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10042" x="1" y="1305" width="419" height="160" frameX="-94" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10043" x="716" y="979" width="419" height="160" frameX="-94" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10044" x="1" y="1468" width="465" height="160" frameX="-74" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10045" x="374" y="1142" width="465" height="160" frameX="-74" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10046" x="1078" y="816" width="481" height="160" frameX="-67" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10047" x="423" y="1305" width="481" height="160" frameX="-67" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10048" x="1138" y="979" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10049" x="469" y="1468" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10050" x="842" y="1142" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10051" x="1138" y="979" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10052" x="469" y="1468" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10053" x="842" y="1142" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10054" x="1138" y="979" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10055" x="469" y="1468" width="476" height="160" frameX="-69" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10056" x="907" y="1305" width="452" height="160" frameX="-21" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10057" x="907" y="1305" width="452" height="160" frameX="-21" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10058" x="948" y="1468" width="378" height="160" frameX="-90" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10059" x="948" y="1468" width="378" height="160" frameX="-90" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10060" x="1321" y="1142" width="376" height="160" frameX="-92" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10061" x="1321" y="1142" width="376" height="160" frameX="-92" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10062" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10063" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10064" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10065" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10066" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10067" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10068" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+	<SubTexture name="KYOKOCUTIN instance 10069" x="1329" y="1468" width="377" height="160" frameX="-91" frameY="-0" frameWidth="715" frameHeight="160"/>
+</TextureAtlas>

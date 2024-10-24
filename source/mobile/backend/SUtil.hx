@@ -95,7 +95,7 @@ class SUtil
 	}
 	#end
 
-	#if android
+	#if (android && MODS_ALLOWED)
 	public static function doPermissionsShit():Void
 	{
 		if (!AndroidPermissions.getGrantedPermissions().contains('READ_EXTERNAL_STORAGE')

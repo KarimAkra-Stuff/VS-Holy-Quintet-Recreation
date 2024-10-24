@@ -1,0 +1,29 @@
+{
+	"directory": "chapter1",
+	"defaultZoom": 0.65,
+	"isPixelStage": false,
+	"camera_boyfriend": [
+		0,
+		-30
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"camera_opponent": [
+		0,
+		-30
+	],
+	"boyfriend": [
+		950,
+		350
+	],
+	"girlfriend": [
+		140,
+		-230
+	],
+	"opponent": [
+		20,
+		330
+	]
+}

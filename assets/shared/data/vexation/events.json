@@ -1,0 +1,1491 @@
+{
+	"song": {
+		"events": [
+			[
+				0,
+				[
+					[
+						"Adjust Camera",
+						"snap",
+						"true"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.0001, 0.45"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"0.0001,0.0,game"
+					],
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Set Property",
+						"camSwayAmount",
+						"0.0"
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"16,0.0"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"125"
+					]
+				]
+			],
+			[
+				1000,
+				[
+					[
+						"Stage Event",
+						"Hide First",
+						""
+					]
+				]
+			],
+			[
+				1454.54545454545,
+				[
+					[
+						"Adjust Camera",
+						"alpha",
+						"0.0001,1.0,game"
+					]
+				]
+			],
+			[
+				3090.90909090909,
+				[
+					[
+						"Play Animation",
+						"intro",
+						"dad"
+					]
+				]
+			],
+			[
+				4727.27272727273,
+				[
+					[
+						"Adjust Camera",
+						"pan",
+						"1.2,-675,x"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"1.2,-100,y"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"1.2,0.20"
+					]
+				]
+			],
+			[
+				7272.72727272727,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"150"
+					]
+				]
+			],
+			[
+				7363.63636363636,
+				[
+					[
+						"Stage Event",
+						"Show Opp Strums",
+						""
+					]
+				]
+			],
+			[
+				8000,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				8545.45454545454,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"0.0001,0.0,x"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"0.0001,0.0,y"
+					],
+					[
+						"Adjust Camera",
+						"snap",
+						"true"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.0001,0.4"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"150"
+					]
+				]
+			],
+			[
+				9454.54545454545,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.0001,0.45"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				10000,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"150"
+					]
+				]
+			],
+			[
+				10909.0909090909,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				11636.3636363636,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"125"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.4,0.20"
+					]
+				]
+			],
+			[
+				12363.6363636364,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.4,0.275"
+					]
+				]
+			],
+			[
+				13090.9090909091,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"150"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.1,0.20"
+					]
+				]
+			],
+			[
+				14727.2727272727,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				16000,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"150"
+					]
+				]
+			],
+			[
+				17454.5454545455,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				18181.8181818182,
+				[
+					[
+						"Song Event",
+						"black bars",
+						"200"
+					]
+				]
+			],
+			[
+				18909.0909090909,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				20363.6363636364,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"200"
+					]
+				]
+			],
+			[
+				21818.1818181818,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				22545.4545454545,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"200"
+					]
+				]
+			],
+			[
+				23272.7272727273,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					],
+					[
+						"Song Event",
+						"black bars",
+						"175"
+					]
+				]
+			],
+			[
+				24000,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					]
+				]
+			],
+			[
+				24181.8181818182,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				24363.6363636364,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					]
+				]
+			],
+			[
+				24545.4545454545,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				24727.2727272727,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"0.4,0.0,game"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.4,0.85"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"0.4,-25,x"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"0.4,-25,y"
+					]
+				]
+			],
+			[
+				24787.8787878788,
+				[
+					[
+						"Adjust Camera",
+						"snap",
+						"false"
+					]
+				]
+			],
+			[
+				25090.9090909091,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				25363.6363636364,
+				[
+					[
+						"Adjust Camera",
+						"pan",
+						"0001,0,x"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"0001,0,y"
+					]
+				]
+			],
+			[
+				25454.5454545455,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				25818.1818181818,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					],
+					[
+						"Set Property",
+						"health",
+						"1.0"
+					],
+					[
+						"Set Property",
+						"healthDisplay",
+						"1.0"
+					]
+				]
+			],
+			[
+				26181.8181818182,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						""
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.6,0.0"
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"4,0.75"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"0.0001,1.0,game"
+					],
+					[
+						"Stage Event",
+						"attack",
+						""
+					],
+					[
+						"Set Property",
+						"cameraSpeed",
+						"1.25"
+					],
+					[
+						"Set Property",
+						"camSwayAmount",
+						"15"
+					],
+					[
+						"Stage Event",
+						"Show HUD",
+						""
+					],
+					[
+						"Stage Event",
+						"Song Name",
+						""
+					],
+					[
+						"Song Event",
+						"black bars",
+						"0"
+					]
+				]
+			],
+			[
+				36727.2727272727,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.00"
+					]
+				]
+			],
+			[
+				37090.9090909091,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				37454.5454545455,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.10"
+					]
+				]
+			],
+			[
+				37818.1818181818,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				40000,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				42181.8181818182,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					]
+				]
+			],
+			[
+				42909.0909090909,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				43636.3636363637,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					]
+				]
+			],
+			[
+				45090.9090909091,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				45818.1818181818,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					]
+				]
+			],
+			[
+				48727.2727272727,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				49454.5454545455,
+				[
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.25,0.15"
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"8,0.75"
+					]
+				]
+			],
+			[
+				49818.1818181818,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.00"
+					]
+				]
+			],
+			[
+				50181.8181818182,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				50545.4545454546,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.10"
+					]
+				]
+			],
+			[
+				50909.0909090909,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.15,0.0"
+					],
+					[
+						"Adjust Camera",
+						"focus",
+						"dad"
+					]
+				]
+			],
+			[
+				51636.3636363637,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						""
+					]
+				]
+			],
+			[
+				52363.6363636364,
+				[
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.5,0.20"
+					]
+				]
+			],
+			[
+				55272.7272727273,
+				[
+					[
+						"Adjust Camera",
+						"zoom",
+						"0.25,0.10"
+					]
+				]
+			],
+			[
+				57090.9090909091,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.00"
+					]
+				]
+			],
+			[
+				57454.5454545455,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				57818.1818181818,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.10"
+					]
+				]
+			],
+			[
+				58181.8181818182,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				62909.0909090909,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				63272.7272727273,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				63636.3636363637,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				64000,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				74545.4545454546,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				74909.0909090909,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				75272.7272727273,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				75636.3636363637,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				83272.7272727273,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				83636.3636363637,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				84000,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				84363.6363636364,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				87272.7272727273,
+				[
+					[
+						"Adjust Camera",
+						"bop",
+						"4,0.75"
+					]
+				]
+			],
+			[
+				97818.1818181819,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				98181.8181818182,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				98545.4545454546,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				98909.090909091,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				109454.545454546,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				109818.181818182,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				110181.818181818,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				110545.454545455,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				121090.909090909,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				121454.545454546,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				121818.181818182,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				122181.818181818,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"8,0.75"
+					]
+				]
+			],
+			[
+				128363.636363636,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				128727.272727273,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				129090.909090909,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				129454.545454546,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				132727.272727273,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				133090.909090909,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				133454.545454546,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				133818.181818182,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"4,0.75"
+					]
+				]
+			],
+			[
+				144363.636363636,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				144727.272727273,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				145090.909090909,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				145454.545454545,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				157090.909090909,
+				[
+					[
+						"Song Event",
+						"cutin",
+						"in"
+					]
+				]
+			],
+			[
+				168727.272727272,
+				[
+					[
+						"Song Event",
+						"reverse salv",
+						""
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"16,0.0"
+					]
+				]
+			],
+			[
+				169090.909090909,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				169454.545454545,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				169727.272727272,
+				[
+					[
+						"Song Event",
+						"cutin",
+						"out"
+					]
+				]
+			],
+			[
+				169818.181818182,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				170000,
+				[
+					[
+						"Adjust Camera",
+						"focus",
+						"bf"
+					]
+				]
+			],
+			[
+				170181.818181818,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					],
+					[
+						"Song Event",
+						"fire",
+						"on"
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"16,1.25"
+					],
+					[
+						"Adjust Camera",
+						"zoom",
+						"4.8,-0.075,quadInOut"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"4.8,-325,x,quadInOut"
+					],
+					[
+						"Set Property",
+						"camSwayAmount",
+						"0.0"
+					],
+					[
+						"Adjust Camera",
+						"pan",
+						"4.8,-50,y,quadInOut"
+					],
+					[
+						"Adjust Camera",
+						"snap",
+						"true"
+					]
+				]
+			],
+			[
+				174909.090909091,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				175272.727272727,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				175636.363636363,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				176000,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				182181.818181818,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				182545.454545454,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				182909.090909091,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				183272.727272727,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				188000,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.0"
+					]
+				]
+			],
+			[
+				188363.636363636,
+				[
+					[
+						"Stage Event",
+						"warning",
+						"1.05"
+					]
+				]
+			],
+			[
+				188727.272727272,
+				[
+					[
+						"Stage Event",
+						"dodge",
+						"1.1"
+					]
+				]
+			],
+			[
+				189090.909090909,
+				[
+					[
+						"Stage Event",
+						"attack",
+						""
+					]
+				]
+			],
+			[
+				190545.454545454,
+				[
+					[
+						"Adjust Camera",
+						"bop",
+						"16,0.0"
+					]
+				]
+			],
+			[
+				190909.09090909,
+				[
+					[
+						"Adjust Camera",
+						"zoom",
+						"1.6,0.0,quadOut"
+					],
+					[
+						"Adjust Camera",
+						"bop",
+						"16,0.0"
+					]
+				]
+			],
+			[
+				193454.545454545,
+				[
+					[
+						"Adjust Camera",
+						"alpha",
+						"0.0001,0.0,game"
+					],
+					[
+						"Adjust Camera",
+						"alpha",
+						"0.0001,0.0,hud"
+					],
+					[
+						"Song Event",
+						"Perfect Check",
+						""
+					]
+				]
+			]
+		]
+	}
+}

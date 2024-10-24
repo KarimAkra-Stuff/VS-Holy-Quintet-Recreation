@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="vibe_mami.png">
+	<!-- Created with Adobe Animate version 23.0.2.103 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="mami ALTcheer0000" x="0" y="0" width="378" height="726" frameX="-38" frameY="-11" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0001" x="0" y="0" width="378" height="726" frameX="-38" frameY="-11" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0002" x="406" y="0" width="331" height="728" frameX="-36" frameY="-9" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0003" x="406" y="0" width="331" height="728" frameX="-36" frameY="-9" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0004" x="765" y="0" width="325" height="734" frameX="-30" frameY="-3" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0005" x="765" y="0" width="325" height="734" frameX="-30" frameY="-3" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0006" x="1118" y="0" width="326" height="736" frameX="-23" frameY="-1" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0007" x="1118" y="0" width="326" height="736" frameX="-23" frameY="-1" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0008" x="1472" y="0" width="325" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0009" x="1472" y="0" width="325" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0010" x="1472" y="0" width="325" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0011" x="1472" y="0" width="325" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0012" x="1472" y="0" width="325" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0013" x="1472" y="0" width="325" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0014" x="1825" y="0" width="329" height="729" frameX="0" frameY="-9" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0015" x="1825" y="0" width="329" height="729" frameX="0" frameY="-9" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0016" x="2182" y="0" width="303" height="730" frameX="-36" frameY="-7" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0017" x="2182" y="0" width="303" height="730" frameX="-36" frameY="-7" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0018" x="2513" y="0" width="321" height="735" frameX="-30" frameY="-3" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0019" x="2513" y="0" width="321" height="735" frameX="-30" frameY="-3" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0020" x="2862" y="0" width="335" height="737" frameX="-23" frameY="-1" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0021" x="2862" y="0" width="335" height="737" frameX="-23" frameY="-1" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0022" x="3225" y="0" width="338" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0023" x="3225" y="0" width="338" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0024" x="3225" y="0" width="338" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0025" x="3225" y="0" width="338" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0026" x="3225" y="0" width="338" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami ALTcheer0027" x="3225" y="0" width="338" height="738" frameX="-22" frameY="0" frameWidth="416" frameHeight="738"/>
+	<SubTexture name="mami cheer0000" x="3591" y="0" width="305" height="729" frameX="-17" frameY="-4" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0001" x="3591" y="0" width="305" height="729" frameX="-17" frameY="-4" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0002" x="0" y="766" width="304" height="728" frameX="-17" frameY="-5" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0003" x="0" y="766" width="304" height="728" frameX="-17" frameY="-5" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0004" x="332" y="766" width="309" height="732" frameX="-7" frameY="-1" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0005" x="332" y="766" width="309" height="732" frameX="-7" frameY="-1" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0006" x="669" y="766" width="312" height="733" frameX="-3" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0007" x="669" y="766" width="312" height="733" frameX="-3" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0008" x="1009" y="766" width="315" height="734" frameX="0" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0009" x="1009" y="766" width="315" height="734" frameX="0" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0010" x="1009" y="766" width="315" height="734" frameX="0" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0011" x="1009" y="766" width="315" height="734" frameX="0" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0012" x="1009" y="766" width="315" height="734" frameX="0" frameY="0" frameWidth="322" frameHeight="734"/>
+	<SubTexture name="mami cheer0013" x="1009" y="766" width="315" height="734" frameX="0" frameY="0" frameWidth="322" frameHeight="734"/>
+</TextureAtlas>

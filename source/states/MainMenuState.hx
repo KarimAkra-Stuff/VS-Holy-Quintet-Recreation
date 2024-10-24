@@ -81,7 +81,6 @@ class MainMenuState extends MusicBeatState
             var atlasFolder:String = Paths.getAtlasPath('atlases/menu/animations/$name', 'images');
             if (Assets.exists(atlasFolder + '/data.json'))
             {
-                trace('adding animation data for $optionName from ${atlasFolder + '/data.json'}');
                 atlasesSymbolData.set(optionName, haxe.Json.parse(Assets.getText(atlasFolder + '/data.json')));
             }
 
@@ -144,8 +143,9 @@ class MainMenuState extends MusicBeatState
 
         lastOptionPoint.put();
 
-        changeItem(0);
+        changeItem();
 
+        addVirtualPad('UP_DOWN', 'A_B');
         super.create();
     }
 
@@ -159,7 +159,10 @@ class MainMenuState extends MusicBeatState
                 changeItem(1);
 
             if (controls.BACK)
+            {
+                busy = true;
                 MusicBeatState.switchState(new TitleState());
+            }
             
             if (controls.ACCEPT)
             {
@@ -171,6 +174,7 @@ class MainMenuState extends MusicBeatState
                     }
                     else
                     {
+                        busy = true;
                         FlxG.sound.play(Paths.sound('confirmMenu'));
                         menuItems.members[curSelected].flash();
                     
@@ -180,7 +184,15 @@ class MainMenuState extends MusicBeatState
                             case 'Freeplay': MusicBeatState.switchState(new FreeplayState());
                             // case 'Achievements': MusicBeatState.switchState(new states.AchievementsMenuState());
                             case 'Credits': MusicBeatState.switchState(new CreditsState());
-                            case 'Settings': MusicBeatState.switchState(new OptionsState());
+                            case 'Settings':
+                                OptionsState.onPlayState = false;
+								if (PlayState.SONG != null)
+								{
+									PlayState.SONG.arrowSkin = null;
+									PlayState.SONG.splashSkin = null;
+									PlayState.stageUI = 'normal';
+								}
+                                MusicBeatState.switchState(new OptionsState());
                         }
                     }
                 }
@@ -189,7 +201,7 @@ class MainMenuState extends MusicBeatState
         super.update(elapsed);
     }
 
-    function changeItem(change:Int)
+    function changeItem(change:Int = 0)
     {
         curSelected += change;
 
@@ -221,6 +233,7 @@ class MainMenuState extends MusicBeatState
             }
         }
 
+        if (change != 0)
         FlxG.sound.play(Paths.sound('scrollMenu'));
     }
 }

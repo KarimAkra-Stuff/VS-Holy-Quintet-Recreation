@@ -3,7 +3,6 @@ package backend;
 class Difficulty
 {
 	public static var defaultList(default, never):Array<String> = [
-		'Easy',
 		'Normal',
 		'Hard'
 	];

@@ -27,6 +27,7 @@ class TitleState extends MusicBeatState
     var starGlow:FlxSprite;
 
     var flash:FlxSprite;
+    var music:openfl.media.Sound;
 
     var colorSwap:ColorSwap = new ColorSwap();
     var introTimer:FlxTimer = null;
@@ -38,6 +39,8 @@ class TitleState extends MusicBeatState
         // FlxG.camera.filters = [new ShaderFilter(colorSwap.shader)];
         if (FlxG.sound.music != null && FlxG.sound.music.playing)
             FlxG.sound.music.stop();
+
+        music = Paths.music('freakyMenu');
         
         FlxG.sound.play(Paths.sound('ui/spaceambient'), 1.0, true);
 
@@ -177,7 +180,7 @@ class TitleState extends MusicBeatState
     function introCallback(_)
     {
         FlxG.sound.play(Paths.sound('ui/start-2'));
-        FlxG.sound.playMusic(Paths.music('freakyMenu'));
+        FlxG.sound.playMusic(music);
         FlxTween.cancelTweensOf(star);
         FlxTween.cancelTweensOf(starGlow);
         FlxTween.cancelTweensOf(flash);

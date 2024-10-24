@@ -23,6 +23,8 @@ class MusicBeatState extends FlxState
 		return Controls.instance;
 	}
 
+	public var blurOnSubstate:Bool = false;
+
 	public var virtualPad:FlxVirtualPad;
 	public var mobileControls:MobileControls;
 	public var camControls:FlxCamera;
@@ -280,5 +282,23 @@ class MusicBeatState extends FlxState
 		var val:Null<Float> = 4;
 		if(PlayState.SONG != null && PlayState.SONG.notes[curSection] != null) val = PlayState.SONG.notes[curSection].sectionBeats;
 		return val == null ? 4 : val;
+	}
+
+	override function openSubState(s)
+	{
+		if (blurOnSubstate)
+			for(i in 0...FlxG.cameras.list.length - 1)
+            	FlxG.cameras.list[i].filters = [Main.BLUR_SHADER];
+
+		super.openSubState(s);
+	}
+
+	override function closeSubState()
+	{
+		super.closeSubState();
+
+		if (blurOnSubstate)
+			for(i in 0...FlxG.cameras.list.length - 1)
+            	FlxG.cameras.list[i].filters.remove(Main.BLUR_SHADER);
 	}
 }

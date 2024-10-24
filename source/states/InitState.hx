@@ -1,14 +1,16 @@
 package states;
 
+import backend.Rating;
 import openfl.filters.BlurFilter;
 import objects.VideoSprite;
-import backend.WeekData;
 import backend.Highscore;
 import flixel.input.keyboard.FlxKey;
 import flixel.addons.transition.FlxTransitionableState;
 import states.StoryMenuState;
 import states.MainMenuState;
 import haxe.Int64;
+
+import objects.ComboWindow;
 
 class InitState extends MusicBeatState
 {
@@ -23,6 +25,7 @@ class InitState extends MusicBeatState
 
     override public function create()
     {
+        FlxTransitionableState.skipNextTransIn = true;
         super.create();
 
         // Paths.clearStoredMemory();
@@ -65,12 +68,19 @@ class InitState extends MusicBeatState
             initialized = true;
         }
 
+        #if STAY_ON_INIT
+        createState();
+        #else
         #if FREEPLAY
-		MusicBeatState.switchState(new FreeplayState());
+        FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		MusicBeatState.switchState(new states.FreeplayState());
+        #elseif MAIN_MENU
+        FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		MusicBeatState.switchState(new states.MainMenuState());
 		#elseif CHARTING
 		MusicBeatState.switchState(new ChartingState());
 		#else
-		if(FlxG.save.data.startedUp == null && !FlashingState.leftState) {
+		if(FlxG.save.data.agreedDisclaimer == null && !FlashingState.leftState) {
 			FlxTransitionableState.skipNextTransIn = true;
 			FlxTransitionableState.skipNextTransOut = true;
 			MusicBeatState.switchState(new FlashingState());
@@ -96,6 +106,7 @@ class InitState extends MusicBeatState
             playingVideo = true;
 		}
 		#end
+        #end
     }
     
     override function update(elapsed:Float)
@@ -105,6 +116,21 @@ class InitState extends MusicBeatState
             if (video.videoSprite.bitmap != null && video.videoSprite.bitmap.position < 0.9 && (video.videoSprite.bitmap.time > Int64.fromFloat(FlxG.sound.music.time + 200) || video.videoSprite.bitmap.time < Int64.fromFloat(FlxG.sound.music.time - 200)))
             video.videoSprite.bitmap.time = Int64.fromFloat(FlxG.sound.music.time);
         }
+        #if STAY_ON_INIT
+        stateUpdate(elapsed);
+        #end
         super.update(elapsed);
     }
+
+    #if STAY_ON_INIT
+    private function createState()
+    {
+
+    }
+    
+    function stateUpdate(elapsed:Float)
+    {
+    
+    }
+    #end
 }

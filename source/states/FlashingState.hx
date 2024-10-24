@@ -13,6 +13,7 @@ class FlashingState extends MusicBeatState
 	override function create()
 	{
 		super.create();
+		blurOnSubstate = true;
 		controls.isInSubstate = false; // qhar I hate it
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('interfaces/title/disclaimer'));
@@ -28,7 +29,7 @@ class FlashingState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if(controls.ACCEPT)
+		if((controls.ACCEPT || FlxG.touches.getFirst() != null && FlxG.touches.getFirst().justPressed) && !leftState)
 		{
 			openSubState(new objects.HQDialog('Confirm Disclaimer', "By selecting 'Yes'. You've read the\ndisclaimer.\nDo you wish to continue?",
 				{name: 'No', onSelect: function(substate) {
@@ -40,10 +41,11 @@ class FlashingState extends MusicBeatState
 					var overlay:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 					overlay.alpha = 0;
 					add(overlay);
-					FlxTween.tween(overlay, {alpha: 1}, {ease: FlxEase.sineInOut, startDelay: (FlxG.sound.play(Paths.sound('confirmMenu')).length / 1000) * 0.8, onComplete: (_) -> MusicBeatState.switchState(new states.InitState())});
-					FlxG.save.data.startedUp = leftState = true;
+					FlxG.save.data.agreedDisclaimer = leftState = true;
 					FlxG.save.flush();
 					substate.close();
+					blurOnSubstate = false;
+					FlxTween.tween(overlay, {alpha: 1}, {ease: FlxEase.sineInOut, startDelay: (FlxG.sound.play(Paths.sound('confirmMenu')).length / 1000) * 0.8, onComplete: (_) -> MusicBeatState.switchState(new states.InitState())});
 				}}
 		));
 	}

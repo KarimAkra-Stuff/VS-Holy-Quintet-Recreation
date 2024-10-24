@@ -59,6 +59,7 @@ class ChartingState extends backend.UIMusicBeatState
 	var eventStuff:Array<Dynamic> =
 	[
 		['', "Nothing. Yep, that's right."],
+		['Adjust Camera', "Change things with camera.\nfor tweening the zoom use zoom on Value 1 and in Value 2 add the args like this 'duration,zoom,easeing' easing is optional.\nfor tweening alpha use alpha on Value 1 and the args are 'duration,alpha,easing'\nto force the camera to focus on a character use focus and say which character on value 2 ('bf' or 'dad')\nto toggle is isCameraOnForcedPos use snap\nto move the camera use snap with the args 'duration,position,axe,easing' easing is optional\nto adjust the step hit zoom use bop with the args 'speed,zoomMult'"],
 		['Dadbattle Spotlight', "Used in Dad Battle,\nValue 1: 0/1 = ON/OFF,\n2 = Target Dad\n3 = Target BF"],
 		['Hey!', "Plays the \"Hey!\" animation from Bopeebo,\nValue 1: BF = Only Boyfriend, GF = Only Girlfriend,\nSomething else = Both.\nValue 2: Custom animation duration,\nleave it blank for 0.6s"],
 		['Set GF Speed', "Sets GF head bopping speed,\nValue 1: 1 = Normal speed,\n2 = 1/2 speed, 4 = 1/4 speed etc.\nUsed on Fresh during the beatbox parts.\n\nWarning: Value must be integer!"],

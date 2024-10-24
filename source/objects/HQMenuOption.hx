@@ -61,11 +61,12 @@ class HQMenuOption extends FlxSpriteGroup
         if (isSelected && !locked)
         {
             var flash:FlxSprite = new FlxSprite().loadGraphic(Paths.image('interfaces/main/buttons/buttonselected'));
+            flash.blend = ADD;
             flash.x -= 10;
             flash.y += 2;
             // CoolUtil.centerObjectInsideObject(flash, button);
             add(flash);
-            FlxTween.tween(flash, {"scale.x": 1.13, "scale.y": 1.13, "alpha": 0.0}, 1.6, {
+            FlxTween.tween(flash, {"scale.x": 1.13, "scale.y": 1.15, "alpha": 0.0}, 1.8, {
                 ease: FlxEase.circOut, 
                 onComplete: (_) -> {
                     flash.destroy();

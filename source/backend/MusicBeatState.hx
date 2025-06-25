@@ -1,5 +1,6 @@
 package backend;
 
+import objects.BakedBlurredBitmap;
 import flixel.addons.ui.FlxUIState;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.FlxState;
@@ -24,6 +25,7 @@ class MusicBeatState extends FlxState
 	}
 
 	public var blurOnSubstate:Bool = false;
+	public var blurOverlay:FlxSprite;
 
 	public var virtualPad:FlxVirtualPad;
 	public var mobileControls:MobileControls;
@@ -287,8 +289,20 @@ class MusicBeatState extends FlxState
 	override function openSubState(s)
 	{
 		if (blurOnSubstate)
-			for(i in 0...FlxG.cameras.list.length - 1)
-            	FlxG.cameras.list[i].filters = [Main.BLUR_SHADER];
+		{
+			if (!persistentUpdate)
+			{
+				blurOverlay = new FlxSprite();
+				blurOverlay.loadGraphic(BakedBlurredBitmap.getGameWindowBlur(4.7, 4.7));
+				blurOverlay.cameras = [FlxG.cameras.list[FlxG.cameras.list.length-1]];
+				add(blurOverlay);
+			}
+			else
+			{
+				for(i in 0...FlxG.cameras.list.length - 1)
+					FlxG.cameras.list[i].filters = [Main.BLUR_SHADER];
+			}
+		}
 
 		super.openSubState(s);
 	}
@@ -298,7 +312,20 @@ class MusicBeatState extends FlxState
 		super.closeSubState();
 
 		if (blurOnSubstate)
-			for(i in 0...FlxG.cameras.list.length - 1)
-            	FlxG.cameras.list[i].filters.remove(Main.BLUR_SHADER);
+		{
+			if (!persistentUpdate)
+			{
+				if (blurOverlay != null)
+				{
+					remove(blurOverlay);
+					blurOverlay = FlxDestroyUtil.destroy(blurOverlay);
+				}
+			}
+			else
+			{
+				for(i in 0...FlxG.cameras.list.length - 1)
+					FlxG.cameras.list[i].filters.remove(Main.BLUR_SHADER);
+			}
+		}
 	}
 }

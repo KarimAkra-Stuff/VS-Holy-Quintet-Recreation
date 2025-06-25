@@ -35,6 +35,7 @@ class HQDialog extends MusicBeatSubstate
 		var bg = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		bg.scrollFactor.set();
 		bg.alpha = 0.76;
+		bg.scale.set(5, 5);
 		add(bg);
 
 		box = new FlxSprite();
@@ -85,7 +86,7 @@ class HQDialog extends MusicBeatSubstate
 		}
 		else
 		{
-			option1.setPosition(box.x + 23, ((box.y + box.height) - 55.5) - option1.height);
+			option1.setPosition(box.x + 23 + 185, ((box.y + box.height) - 55.5) - option1.height);
 			option1.isSelected = true;
 		}
 
@@ -126,6 +127,9 @@ class HQDialog extends MusicBeatSubstate
 				});
 			}
 		});
+		
+		addVirtualPad('LEFT_RIGHT', 'A');
+		virtualPad.cameras = [cam];
 	}
 
 	override public function update(elapsed:Float)
@@ -139,11 +143,8 @@ class HQDialog extends MusicBeatSubstate
 				option.onSelect(this);
 		}
 
-		if (controls.UI_LEFT_P || controls.UI_RIGHT_P)
+		if ((controls.UI_LEFT_P || controls.UI_RIGHT_P) && options.length > 1)
 			FlxG.sound.play(Paths.sound('scrollMenu'));
-
-		addVirtualPad('LEFT_RIGHT', 'A');
-		virtualPad.cameras = [cam];
 
 		super.update(elapsed);
 	}

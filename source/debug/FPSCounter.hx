@@ -20,7 +20,7 @@ class FPSCounter extends TextField
 	/**
 		The current frame rate, expressed using frames-per-second
 	**/
-	public var currentFPS(default, null):Int;
+	public var currentFPS(default, null):Float;
 
 	/**
 		The current memory usage (WARNING: this is NOT your total program memory usage, rather it shows the garbage collector memory)
@@ -64,19 +64,24 @@ class FPSCounter extends TextField
 			return;
 		}
 
-		final now:Float = haxe.Timer.stamp() * 1000;
-		times.push(now);
-		while (times[0] < now - 1000) times.shift();
+		// final now:Float = haxe.Timer.stamp() * 1000;
+		// times.push(now);
+		// while (times[0] < now - 1000) times.shift();
 
-		currentFPS = times.length < FlxG.updateFramerate ? times.length : FlxG.updateFramerate;		
+		final fps:Float = CoolUtil.floorDecimal(1.0 / deltaTime, 2);
+		if (Math.abs(fps - FlxG.updateFramerate) > 5)
+			currentFPS = fps < FlxG.updateFramerate ? fps : FlxG.updateFramerate;
 		updateText();
 		deltaTimeout += deltaTime;
 	}
 
 	public dynamic function updateText():Void // so people can override it in hscript
 	{
+		var _fps = '$currentFPS';
+		if (!_fps.contains('.'))
+			_fps += '.00';
 		text = 
-		'FPS: $currentFPS' + 
+		'FPS: $_fps' + 
 		'\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
 		os;
 
@@ -89,7 +94,7 @@ class FPSCounter extends TextField
 		return cast(OpenFlSystem.totalMemory, UInt);
 
 	public inline function positionFPS(X:Float, Y:Float, ?scale:Float = 1){
-		scaleX = scaleY = #if mobile (scale > 1 ? scale : 1) #else (scale < 1 ? scale : 1) #end;
+		scaleX = scaleY = #if android (scale > 1 ? scale : 1) #else (scale < 1 ? scale : 1) #end;
 		x = FlxG.game.x + X;
 		y = FlxG.game.y + Y;
 	}

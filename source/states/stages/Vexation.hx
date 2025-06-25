@@ -5,7 +5,9 @@ import objects.StrumNote;
 import flxanimate.FlxAnimate;
 import flixel.graphics.FlxGraphic;
 import flixel.util.FlxDestroyUtil;
+#if VIDEOS_ALLOWED
 import hxvlc.flixel.FlxVideoSprite;
+#end
 import states.stages.objects.Cutin;
 
 class Vexation extends BaseStage
@@ -52,23 +54,14 @@ class Vexation extends BaseStage
 
 	// Miscs variabls
 	public var first:FlxSprite;
+	#if VIDEOS_ALLOWED
 	public var fire:FlxVideoSprite;
+	#end
 
 	// Cutin variabls
 	public var cutinBg:FlxSprite;
 	public var gfCutin:Cutin;
 	public var kyokoCutin:Cutin;
-	public var allowedCutinAnimations:Array<String> = [
-		'idle',
-		'singLEFT',
-		'singDOWN',
-		'singUP',
-		'singRIGHTMiss',
-		'singLEFTMiss',
-		'singDOWNMiss',
-		'singUPMiss',
-		'singRIGHTMiss'
-	];
 
 	override function create()
 	{
@@ -84,6 +77,7 @@ class Vexation extends BaseStage
 		game.camZooming = true;
 		game.hudZooming = true;
 		game.hideOppNotes = true;
+		game.addSpeakerAboveGF = false;
 		FlxG.camera.alpha = 0.00001;
 
 		background = new FlxSprite().loadGraphic(Paths.image('vexation/background'));
@@ -241,6 +235,7 @@ class Vexation extends BaseStage
 		insert(game.members.indexOf(game.noteGroup) - 1, first);
 		FlxTween.tween(first, {y: downScroll ? first.y - 8 : first.y + 8}, 0.8, {ease: FlxEase.sineInOut, type: FlxTweenType.PINGPONG});
 
+		#if VIDEOS_ALLOWED
 		fire = new FlxVideoSprite();
 		fire.autoPause = false;
 		fire.load(Paths.videoBytes('fire'), ['input-repeat=65545']);
@@ -252,6 +247,7 @@ class Vexation extends BaseStage
 
 		FlxG.signals.focusLost.add(pauseFire);
 		FlxG.signals.focusGained.add(resumeFire);
+		#end
 
 		cooldownBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.89 : 0.11), 'interfaces/game/dodgeBar', () -> return dodgeCooldown.progress,
 			0, 1);
@@ -338,27 +334,6 @@ class Vexation extends BaseStage
 		gfCutin.cam.zoom = game.camHUD.zoom;
 	}
 
-	override function countdownTick(count:Countdown, num:Int)
-	{
-		switch (count)
-		{
-			case THREE: // num 0
-			case TWO: // num 1
-			case ONE: // num 2
-			case GO: // num 3
-			case START: // num 4
-		}
-	}
-
-	// Steps, Beats and Sections:
-	//    curStep, curDecStep
-	//    curBeat, curDecBeat
-	//    curSection
-	override function stepHit()
-	{
-		// Code here
-	}
-
 	override function beatHit()
 	{
 		// Code here
@@ -366,11 +341,6 @@ class Vexation extends BaseStage
 		sayaka.anim.play('bop');
 		mami.anim.play('bop');
 		madoka.anim.play('bop');
-	}
-
-	override function sectionHit()
-	{
-		// Code here
 	}
 
 	// Substates for pausing/resuming tweens and timers
@@ -381,12 +351,14 @@ class Vexation extends BaseStage
 			// timer.active = true;
 			// tween.active = true;
 
+			#if VIDEOS_ALLOWED
 			if (!FlxG.signals.focusLost.has(pauseFire))
 				FlxG.signals.focusLost.add(pauseFire);
 			if (!FlxG.signals.focusGained.has(resumeFire))
 				FlxG.signals.focusGained.add(resumeFire);
 
 			resumeFire();
+			#end
 		}
 	}
 
@@ -397,12 +369,14 @@ class Vexation extends BaseStage
 			// timer.active = false;
 			// tween.active = false;
 
+			#if VIDEOS_ALLOWED
 			if (FlxG.signals.focusLost.has(pauseFire))
 				FlxG.signals.focusLost.remove(pauseFire);
 			if (FlxG.signals.focusGained.has(resumeFire))
 				FlxG.signals.focusGained.remove(resumeFire);
 
 			pauseFire();
+			#end
 		}
 	}
 
@@ -417,10 +391,12 @@ class Vexation extends BaseStage
 					case 'fire':
 						if (value2 == 'on')
 						{
+							#if VIDEOS_ALLOWED
 							fire.play();
 							fire.scale.set(2.15, 2.15);
 							fire.setPosition(258, -40);
 							FlxTween.tween(fire, {alpha: 1.0}, 0.8, {ease: FlxEase.circOut});
+							#end
 						}
 					case 'cutin':
 						if (value2 == 'in')
@@ -532,47 +508,6 @@ class Vexation extends BaseStage
 		}
 	}
 
-	override function eventPushed(event:objects.Note.EventNote)
-	{
-		// used for preloading assets used on events that doesn't need different assets based on its values
-		switch (event.event)
-		{
-			case "My Event":
-				// precacheImage('myImage') //preloads images/myImage.png
-				// precacheSound('mySound') //preloads sounds/mySound.ogg
-				// precacheMusic('myMusic') //preloads music/myMusic.ogg
-		}
-	}
-
-	override function eventPushedUnique(event:objects.Note.EventNote)
-	{
-		// used for preloading assets used on events where its values affect what assets should be preloaded
-		switch (event.event)
-		{
-			case "My Event":
-				switch (event.value1)
-				{
-					// If value 1 is "blah blah", it will preload these assets:
-					case 'blah blah':
-						// precacheImage('myImageOne') //preloads images/myImageOne.png
-						// precacheSound('mySoundOne') //preloads sounds/mySoundOne.ogg
-						// precacheMusic('myMusicOne') //preloads music/myMusicOne.ogg
-
-						// If value 1 is "coolswag", it will preload these assets:
-					case 'coolswag':
-						// precacheImage('myImageTwo') //preloads images/myImageTwo.png
-						// precacheSound('mySoundTwo') //preloads sounds/mySoundTwo.ogg
-						// precacheMusic('myMusicTwo') //preloads music/myMusicTwo.ogg
-
-						// If value 1 is not "blah blah" or "coolswag", it will preload these assets:
-					default:
-						// precacheImage('myImageThree') //preloads images/myImageThree.png
-						// precacheSound('mySoundThree') //preloads sounds/mySoundThree.ogg
-						// precacheMusic('myMusicThree') //preloads music/myMusicThree.ogg
-				}
-		}
-	}
-
 	private function glowWarning()
 	{
 		FlxTween.cancelTweensOf(warning);
@@ -648,6 +583,7 @@ class Vexation extends BaseStage
 		super.destroy();
 	}
 
+	#if VIDEOS_ALLOWED
 	private function pauseFire()
 	{
 		if (fire != null)
@@ -659,6 +595,7 @@ class Vexation extends BaseStage
 		if (fire != null)
 			fire.resume();
 	}
+	#end
 
 	private function cacheStuff()
 	{

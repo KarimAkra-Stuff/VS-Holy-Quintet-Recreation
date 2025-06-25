@@ -275,7 +275,7 @@ class WindowRating extends FlxSprite
 	public function popIn()
 	{
 		if (colorSwap != null)
-			colorSwap.brightness = 4;
+			colorSwap.brightness = 1.5;
 		if (ratingName != 'break')
 		{
 			angle = 0;
